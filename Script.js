@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { value: 25, color: '#7C6BF2' },
   ]);
 
-  /* ---------- Contact form validation ---------- */
+  /* ---------- Contact form validation & EmailJS Integration ---------- */
   const form = document.getElementById('contactForm');
   const successMsg = document.getElementById('formSuccess');
 
@@ -236,17 +236,46 @@ document.addEventListener('DOMContentLoaded', () => {
       const nameInput = document.getElementById('cf-name');
       const emailInput = document.getElementById('cf-email');
       const msgInput = document.getElementById('cf-msg');
+      const submitBtn = form.querySelector('button[type="submit"]');
 
       const nameValid = validateField(nameInput.closest('.field'), nameInput.value.trim().length > 1);
       const emailValid = validateField(emailInput.closest('.field'), /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim()));
       const msgValid = validateField(msgInput.closest('.field'), msgInput.value.trim().length > 4);
 
       if (nameValid && emailValid && msgValid) {
-        successMsg.classList.add('show');
-        form.reset();
-        // reset floating labels state
-        form.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
-        setTimeout(() => successMsg.classList.remove('show'), 5000);
+        // Button loading state handler
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Sending... <span class="arrow">⏳</span>';
+        submitBtn.disabled = true;
+
+        // EmailJS template parameters mapper
+        const params = {
+            email: emailInput.value.trim(),      // Auto-Reply template ke {{email}} mapping ke liye
+            name: nameInput.value.trim(),        // Template ke {{name}} ke liye
+            title: "Portfolio Contact Message",  // Template ke {{title}} ke liye
+            message: msgInput.value.trim()       // Message body text
+        };
+
+        // TODO: Replace these placeholders with your real EmailJS keys
+        const serviceID = 'service_5rauum1';
+            const templateID = 'template_24jltgv';
+
+        emailjs.send(serviceID, templateID, params)
+            .then(function(response) {
+                // Success feedback UI update
+                successMsg.classList.add('show');
+                form.reset();
+                form.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
+                setTimeout(() => successMsg.classList.remove('show'), 5000);
+            }, function(error) {
+                // Fallback error messaging
+                alert('Failed to send message. Please try again. Error: ' + JSON.stringify(error));
+            })
+            .finally(function() {
+                // Button state restore to normal execution flow
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            });
       }
     });
 
