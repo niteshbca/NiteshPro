@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NiteshPro — Website, Mobile App & CRM Development</title>
+<meta name="description" content="NiteshPro builds modern websites, powerful mobile apps and smart CRM solutions to automate your business and accelerate growth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Progress Bar ===== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===== Header ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark">N</span>
+      <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li class="has-dropdown">
+          <a href="#services" class="nav-link">Services <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></a>
+          <ul class="dropdown">
+            <li><a href="#services">Website Development</a></li>
+            <li><a href="#services">Mobile App Development</a></li>
+            <li><a href="#services">CRM Development</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+          </ul>
+        </li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#stats" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#contact" class="btn btn-primary btn-sm">Get Free Quote <span class="arrow">→</span></a>
+      <a href="tel:8810751872" class="call-us">
+        <span class="call-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.7 3.5 4.9 6.2 6.2l2-2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1l-2 2.3z" fill="currentColor"/></svg>
+        </span>
+        <span class="call-text"><strong>8810751872</strong><small>Call Us Now</small></span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy reveal-up">
+      <span class="eyebrow-pill">We build solutions that grow your business</span>
+      <h1 class="hero-title">
+        Website, Mobile App &amp;<br>
+        CRM Development <span class="text-gradient">Solutions</span>
+      </h1>
+      <p class="hero-desc">We build modern, responsive websites, powerful mobile apps and smart CRM solutions to automate your business and accelerate growth.</p>
+
+      <ul class="hero-features">
+        <li>
+          <span class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="currentColor"/></svg>
+          </span>
+          <div><strong>Modern Design</strong><small>Clean, Responsive &amp; User Friendly</small></div>
+        </li>
+        <li>
+          <span class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
+          </span>
+          <div><strong>High Performance</strong><small>Fast, Secure &amp; Scalable Solutions</small></div>
+        </li>
+        <li>
+          <span class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          </span>
+          <div><strong>Custom Solutions</strong><small>Tailored to Your Business Needs</small></div>
+        </li>
+      </ul>
+
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Get Free Quote <span class="arrow">→</span></a>
+        <a href="#services" class="btn btn-outline">Explore Services <span class="dots">⋮⋮</span></a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal-up" style="--delay:.15s">
+      <div class="satisfaction-badge">
+        <svg viewBox="0 0 120 120" class="badge-ring">
+          <circle cx="60" cy="60" r="52" />
+        </svg>
+        <div class="badge-text"><strong>100%</strong><span>Client<br>Satisfaction</span></div>
+      </div>
+
+      <div class="device-stack">
+        <div class="device device-laptop">
+          <div class="device-notch"></div>
+          <div class="device-screen">
+            <div class="mock-nav"><span class="mock-logo">NiteshPro</span><span class="mock-links">Home · Services · About · Portfolio · Contact</span><span class="mock-btn">Get Started</span></div>
+            <div class="mock-hero">
+              <h4>We Build Digital<br>Experiences That <em>Drive Results</em></h4>
+              <p>Sleek websites, strong apps and CRM systems engineered for growth.</p>
+              <span class="mock-cta">Get Started</span>
+            </div>
+          </div>
+          <div class="device-base"></div>
+        </div>
+
+        <div class="device device-phone">
+          <div class="device-screen">
+            <div class="phone-topbar"><span>Dashboard</span></div>
+            <div class="phone-card">
+              <div class="phone-stat"><small>Revenue</small><strong>₹25,660</strong></div>
+              <div class="phone-row"><span class="pill pill-blue">3 Deals</span><span class="pill pill-green">55,660</span></div>
+              <canvas id="phoneChart" width="220" height="70"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="device device-tablet">
+          <div class="device-screen">
+            <div class="crm-topbar"><span>◆ CRM</span><span>CRM Dashboard</span></div>
+            <div class="crm-body">
+              <aside class="crm-side">
+                <span class="active">Dashboard</span><span>Leads</span><span>Deals</span><span>Customers</span><span>Tasks</span><span>Reports</span><span>Settings</span>
+              </aside>
+              <div class="crm-main">
+                <div class="crm-kpis">
+                  <div class="kpi"><small>Total Leads</small><strong id="kpiLeads">0</strong></div>
+                  <div class="kpi"><small>Deals In Progress</small><strong class="orange" id="kpiDeals">0</strong></div>
+                  <div class="kpi"><small>Total Clients</small><strong id="kpiClients">0</strong></div>
+                  <div class="kpi"><small>Revenue</small><strong id="kpiRevenue">₹0</strong></div>
+                </div>
+                <div class="crm-charts">
+                  <div class="crm-chart-card">
+                    <small>Sales Overview</small>
+                    <canvas id="crmLine" width="200" height="80"></canvas>
+                  </div>
+                  <div class="crm-chart-card crm-donut-card">
+                    <small>Leads Source</small>
+                    <canvas id="crmDonut" width="90" height="80"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-heading reveal-up">
+      <span class="eyebrow">What We Do</span>
+      <h2>Our <span class="text-gradient">Development</span> Services</h2>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal-up">
+        <div class="service-icon icon-blue">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9S9.5 5.6 12 3z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </div>
+        <h3>Website Development</h3>
+        <p>We build fast, SEO-friendly, responsive and modern websites that represent your brand and attract more customers.</p>
+        <ul class="check-list">
+          <li>Business Websites</li>
+          <li>E-Commerce Websites</li>
+          <li>Landing Pages</li>
+          <li>Custom Web Applications</li>
+        </ul>
+        <a href="#contact" class="link-more">Learn More <span class="arrow">→</span></a>
+      </article>
+
+      <article class="service-card reveal-up" style="--delay:.1s">
+        <div class="service-icon icon-purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M11 19h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Mobile App Development</h3>
+        <p>We create powerful mobile apps for Android &amp; iOS that provide smooth user experience and high performance.</p>
+        <ul class="check-list">
+          <li>Android App Development</li>
+          <li>iOS App Development</li>
+          <li>Cross Platform Apps</li>
+          <li>UI/UX Design</li>
+        </ul>
+        <a href="#contact" class="link-more">Learn More <span class="arrow">→</span></a>
+      </article>
+
+      <article class="service-card reveal-up" style="--delay:.2s">
+        <div class="service-icon icon-green">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="17.5" cy="9" r="2.2" stroke="currentColor" stroke-width="1.4"/><path d="M15.5 20c.2-2.5 1.8-4.2 4-4.6" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+        </div>
+        <h3>CRM Development</h3>
+        <p>We build smart CRM solutions to manage leads, customers, sales, and support — all in one place.</p>
+        <ul class="check-list">
+          <li>Lead Management</li>
+          <li>Sales Management</li>
+          <li>Customer Management</li>
+          <li>Reports &amp; Analytics</li>
+        </ul>
+        <a href="#contact" class="link-more">Learn More <span class="arrow">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stats ===== -->
+<section class="stats" id="stats">
+  <div class="container">
+    <div class="stats-bar reveal-up">
+      <div class="stat">
+        <span class="stat-icon">🚀</span>
+        <div><strong class="counter" data-target="100">0</strong><span>+</span><small>Projects Delivered</small></div>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">👥</span>
+        <div><strong class="counter" data-target="50">0</strong><span>+</span><small>Happy Clients</small></div>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">🏅</span>
+        <div><strong class="counter" data-target="5">0</strong><span>+</span><small>Years Experience</small></div>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">🎧</span>
+        <div><strong>24/7</strong><small>Support Available</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact / CTA ===== -->
+<section class="contact-cta" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-card reveal-up">
+      <h3>Get In Touch</h3>
+      <p>Have a project in mind? Let's build something great together!</p>
+      <ul class="contact-list">
+        <li><span class="c-icon">📞</span> 8810751872</li>
+        <li><span class="c-icon">✉️</span> niteshkumarsingh1500@gamil.com</li>
+        <li><span class="c-icon">📍</span> India</li>
+      </ul>
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <input type="text" id="cf-name" placeholder=" " required>
+            <label for="cf-name">Your Name</label>
+            <span class="error-msg">Please enter your name</span>
+          </div>
+          <div class="field">
+            <input type="email" id="cf-email" placeholder=" " required>
+            <label for="cf-email">Your Email</label>
+            <span class="error-msg">Enter a valid email</span>
+          </div>
+        </div>
+        <div class="field">
+          <textarea id="cf-msg" rows="3" placeholder=" " required></textarea>
+          <label for="cf-msg">Tell us about your project</label>
+          <span class="error-msg">Please add a short message</span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message <span class="arrow">→</span></button>
+        <p class="form-success" id="formSuccess">✓ Thanks! Your message has been noted. We'll get back to you soon.</p>
+      </form>
+    </div>
+
+    <div class="grow-card reveal-up" style="--delay:.1s">
+      <div class="grow-glow" aria-hidden="true"></div>
+      <h3>Let's Grow Your Business Together</h3>
+      <p>We are here to help you turn your ideas into powerful digital solutions.</p>
+      <a href="#contact" class="btn btn-primary">Get Free Quote <span class="arrow">→</span></a>
+      <div class="grow-illustration">
+        <svg viewBox="0 0 260 160" width="100%" height="100%">
+          <rect x="20" y="20" width="130" height="90" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.25)"/>
+          <polyline points="35,90 65,65 90,80 120,45 140,55" fill="none" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="140" cy="55" r="4" fill="#60A5FA" class="pulse-dot"/>
+          <circle cx="205" cy="70" r="26" fill="rgba(96,165,250,.18)"/>
+          <circle cx="205" cy="45" r="12" fill="#93C5FD"/>
+          <rect x="190" y="58" width="30" height="45" rx="10" fill="#3B82F6"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="brand">
+        <span class="brand-mark">N</span>
+        <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+      </a>
+      <p>We build websites, mobile apps &amp; CRM solutions that help businesses grow and succeed.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="WhatsApp">☏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <a href="#services">Website Development</a>
+      <a href="#services">Mobile App Development</a>
+      <a href="#services">CRM Development</a>
+      <a href="#services">UI/UX Design</a>
+      <a href="#services">Digital Marketing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <a href="tel:8810751872">📞 8810751872</a>
+      <a href="mailto:niteshkumarsingh1500@gamil.com">✉️ niteshkumarsingh1500@gamil.com</a>
+      <span>📍 India</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© 2024 NiteshPro. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
