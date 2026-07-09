@@ -55,6 +55,10 @@
       overflow-x: hidden;
     }
 
+    body.nav-locked {
+      overflow: hidden;
+    }
+
     img {
       max-width: 100%;
       display: block;
@@ -180,7 +184,7 @@
       height: 3px;
       width: 0%;
       background: linear-gradient(90deg, var(--blue-400), var(--sky-300));
-      z-index: 1000;
+      z-index: 1200;
       transition: width .1s linear;
     }
 
@@ -215,6 +219,7 @@
       font-weight: 700;
       font-size: 1.25rem;
       color: #fff;
+      flex: none;
     }
 
     .brand-mark {
@@ -270,6 +275,14 @@
       position: relative;
     }
 
+    .dropdown-caret {
+      transition: transform .2s ease;
+    }
+
+    .has-dropdown.open .dropdown-caret {
+      transform: rotate(180deg);
+    }
+
     .dropdown {
       position: absolute;
       top: calc(100% + 14px);
@@ -309,6 +322,7 @@
       display: flex;
       align-items: center;
       gap: 18px;
+      flex: none;
     }
 
     .call-us {
@@ -345,16 +359,21 @@
       display: none;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       gap: 5px;
-      width: 38px;
-      height: 38px;
-      background: none;
-      border: none;
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid var(--line);
+      border-radius: 10px;
       cursor: pointer;
+      flex: none;
+      z-index: 1001;
+      position: relative;
     }
 
     .nav-toggle span {
-      width: 100%;
+      width: 20px;
       height: 2px;
       background: #fff;
       border-radius: 2px;
@@ -371,6 +390,23 @@
 
     .nav-toggle.open span:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ============ Nav overlay (mobile) ============ */
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 11, 26, .55);
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease;
+      z-index: 995;
+    }
+
+    .nav-overlay.show {
+      opacity: 1;
+      visibility: visible;
     }
 
     /* ============ Hero ============ */
@@ -1321,13 +1357,14 @@
         top: 0;
         right: 0;
         height: 100vh;
-        width: min(300px, 80%);
+        width: min(300px, 82%);
         background: var(--navy-900);
         padding: 100px 26px 26px;
         transform: translateX(100%);
         transition: transform .35s ease;
-        box-shadow: -20px 0 40px rgba(0, 0, 0, .3);
+        box-shadow: -20px 0 40px rgba(0, 0, 0, .35);
         overflow-y: auto;
+        z-index: 999;
       }
       .main-nav.open {
         transform: translateX(0);
@@ -1336,6 +1373,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
+        width: 100%;
       }
       .main-nav ul li {
         width: 100%;
@@ -1345,21 +1383,28 @@
         opacity: 1;
         visibility: visible;
         transform: none;
-        background: transparent;
+        background: rgba(255,255,255,.04);
         border: none;
         box-shadow: none;
         display: none;
+        margin-top: 4px;
         padding-left: 14px;
       }
       .has-dropdown.open .dropdown {
         display: block;
       }
       .nav-link {
-        padding: 12px 0;
+        padding: 14px 4px;
         width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255,255,255,.06);
       }
       .header-actions .call-us {
         display: none;
+      }
+      .header-actions .btn-sm {
+        padding: 9px 16px;
+        font-size: .8rem;
       }
       .nav-toggle {
         display: flex;
@@ -1446,6 +1491,18 @@
         width: 140px;
         height: 100px;
       }
+      .header-actions .btn-sm span.btn-label-full {
+        display: none;
+      }
+    }
+
+    @media (max-width:380px) {
+      .main-nav {
+        width: 88%;
+      }
+      .brand {
+        font-size: 1.05rem;
+      }
     }
   </style>
 </head>
@@ -1453,6 +1510,9 @@
 
   <!-- ===== Progress Bar ===== -->
   <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===== Nav overlay (mobile) ===== -->
+  <div class="nav-overlay" id="navOverlay"></div>
 
   <!-- ===== Header ===== -->
   <header class="site-header" id="siteHeader">
@@ -1467,7 +1527,7 @@
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About Us</a></li>
           <li class="has-dropdown">
-            <a href="#services" class="nav-link">Services <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></a>
+            <a href="#services" class="nav-link">Services <svg class="dropdown-caret" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></a>
             <ul class="dropdown">
               <li><a href="#services">Website Development</a></li>
               <li><a href="#services">Mobile App Development</a></li>
@@ -1483,18 +1543,17 @@
       </nav>
 
       <div class="header-actions">
-        <a href="#contact" class="btn btn-primary btn-sm">Get Free Quote <span class="arrow">→</span></a>
+        <a href="#contact" class="btn btn-primary btn-sm"><span class="btn-label-full">Get Free Quote</span><span class="btn-label-short" style="display:none">Quote</span> <span class="arrow">→</span></a>
         <a href="tel:8810751872" class="call-us">
           <span class="call-icon" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.7 3.5 4.9 6.2 6.2l2-2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1l-2 2.3z" fill="currentColor"/></svg>
           </span>
           <span class="call-text"><strong>8810751872</strong><small>Call Us Now</small></span>
         </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
@@ -1815,11 +1874,34 @@
       /* ---------- Mobile nav toggle ---------- */
       const navToggle = document.getElementById('navToggle');
       const mainNav = document.getElementById('mainNav');
+      const navOverlay = document.getElementById('navOverlay');
+
+      function openNav() {
+        mainNav.classList.add('open');
+        navToggle.classList.add('open');
+        navOverlay.classList.add('show');
+        navToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('nav-locked');
+      }
+
+      function closeNav() {
+        mainNav.classList.remove('open');
+        navToggle.classList.remove('open');
+        navOverlay.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-locked');
+        document.querySelectorAll('.has-dropdown.open').forEach(li => li.classList.remove('open'));
+      }
 
       navToggle.addEventListener('click', () => {
-        const isOpen = mainNav.classList.toggle('open');
-        navToggle.classList.toggle('open', isOpen);
-        navToggle.setAttribute('aria-expanded', isOpen);
+        const isOpen = mainNav.classList.contains('open');
+        isOpen ? closeNav() : openNav();
+      });
+
+      navOverlay.addEventListener('click', closeNav);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeNav();
       });
 
       // Mobile dropdown toggle
@@ -1832,14 +1914,18 @@
         });
       });
 
-      // Close mobile nav when a link is clicked
+      // Close mobile nav when a non-dropdown link is clicked
       document.querySelectorAll('.main-nav a').forEach(link => {
         link.addEventListener('click', () => {
           if (window.innerWidth <= 820 && !link.parentElement.classList.contains('has-dropdown')) {
-            mainNav.classList.remove('open');
-            navToggle.classList.remove('open');
+            closeNav();
           }
         });
+      });
+
+      // Close nav automatically if resized back to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 820) closeNav();
       });
 
       /* ---------- Active nav link on scroll ---------- */
