@@ -193,10 +193,23 @@
       position: sticky;
       top: 0;
       z-index: 900;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      transition: padding .3s ease;
+      /* NOTE: no backdrop-filter directly on this element — see
+         .site-header-bg below. backdrop-filter here would create a new
+         containing block for any position:fixed descendant (like
+         .main-nav), which is what caused the mobile menu to render
+         clipped/blurred inside the header's own small box instead of
+         covering the full viewport. */
+    }
+
+    .site-header-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
       background: rgba(6, 11, 26, .72);
       backdrop-filter: blur(14px) saturate(140%);
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-      transition: padding .3s ease, background .3s ease;
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
     }
 
     .header-inner {
@@ -393,11 +406,13 @@
     }
 
     /* ============ Nav overlay (mobile) ============ */
+    /* Plain dark dim layer only — intentionally NO backdrop-filter/blur
+       here, since blurring the page content behind the menu was being
+       misread as a rendering bug. */
     .nav-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(6, 11, 26, .55);
-      backdrop-filter: blur(2px);
+      background: rgba(6, 11, 26, .6);
       opacity: 0;
       visibility: hidden;
       transition: opacity .3s ease, visibility .3s ease;
@@ -1516,6 +1531,7 @@
 
   <!-- ===== Header ===== -->
   <header class="site-header" id="siteHeader">
+    <div class="site-header-bg" aria-hidden="true"></div>
     <div class="container header-inner">
       <a href="#home" class="brand">
         <span class="brand-mark">N</span>
