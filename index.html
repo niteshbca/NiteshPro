@@ -883,6 +883,608 @@
       font-size: .55rem;
     }
 
+    /* ============ About ============ */
+    .about {
+      padding: 100px 0;
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-art {
+      position: relative;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .about-art::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      background: var(--blue-500);
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .45;
+      top: -60px;
+      right: -60px;
+    }
+
+    .about-art-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .about-art-card {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      color: #fff;
+    }
+
+    .about-art-card.tall {
+      grid-row: span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-art-card .num {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--sky-300);
+    }
+
+    .about-art-card small {
+      display: block;
+      color: var(--ink-400);
+      font-size: .74rem;
+      margin-top: 4px;
+    }
+
+    .about-art-card svg {
+      color: var(--blue-300);
+      margin-bottom: 10px;
+    }
+
+    .about-badge-float {
+      position: absolute;
+      left: -22px;
+      bottom: -22px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: float 5.5s ease-in-out infinite;
+    }
+
+    .about-badge-float .ring {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), #1AA96A);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      flex: none;
+    }
+
+    .about-badge-float strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: .95rem;
+      color: var(--navy-900);
+    }
+
+    .about-badge-float small {
+      color: var(--ink-400);
+      font-size: .72rem;
+    }
+
+    .about-copy .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    .about-copy>p {
+      color: var(--ink-600);
+      line-height: 1.75;
+      font-size: 1rem;
+      margin-bottom: 26px;
+    }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .about-value {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .about-value .v-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      background: rgba(46, 107, 242, .1);
+      color: var(--blue-500);
+    }
+
+    .about-value strong {
+      display: block;
+      font-size: .92rem;
+      color: var(--navy-900);
+      margin-bottom: 2px;
+    }
+
+    .about-value p {
+      color: var(--ink-600);
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    .about-ctas {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .about-founder {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .founder-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-400), var(--purple));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+
+    .about-founder strong {
+      display: block;
+      font-size: .88rem;
+      color: var(--navy-900);
+    }
+
+    .about-founder small {
+      color: var(--ink-400);
+      font-size: .76rem;
+    }
+
+    /* ============ Portfolio ============ */
+    .portfolio {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--navy-950), var(--navy-900));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio .section-heading h2 {
+      color: #fff;
+    }
+
+    .portfolio .section-heading p {
+      color: var(--ink-400);
+      margin-top: 12px;
+      font-size: .95rem;
+    }
+
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid var(--line);
+      color: rgba(255, 255, 255, .72);
+      font-size: .85rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all .2s ease;
+      font-family: var(--font-body);
+    }
+
+    .filter-btn:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .3);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--blue-400), var(--blue-500));
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 10px 24px -10px rgba(46, 107, 242, .6);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .portfolio-card {
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease, opacity .3s ease;
+    }
+
+    .portfolio-card.is-hidden {
+      display: none;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .portfolio-thumb {
+      position: relative;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .portfolio-thumb svg {
+      width: 60%;
+      height: 60%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .thumb-blue { background: linear-gradient(135deg, #1c3a8a, #2E6BF2); }
+    .thumb-purple { background: linear-gradient(135deg, #4b3a91, #7C6BF2); }
+    .thumb-green { background: linear-gradient(135deg, #14805a, #22C67D); }
+
+    .portfolio-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(6, 11, 26, .55);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 999px;
+      z-index: 2;
+    }
+
+    .portfolio-body {
+      padding: 22px 22px 24px;
+    }
+
+    .portfolio-body h3 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .portfolio-body p {
+      color: var(--ink-400);
+      font-size: .85rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .portfolio-result {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-result strong {
+      color: var(--green);
+      font-family: var(--font-display);
+      font-size: 1rem;
+    }
+
+    .portfolio-result span {
+      color: var(--ink-400);
+      font-size: .68rem;
+    }
+
+    .portfolio-client {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .client-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+    }
+
+    .portfolio-client small {
+      color: var(--ink-400);
+      font-size: .7rem;
+    }
+
+    /* ============ Pricing ============ */
+    .pricing {
+      padding: 100px 0;
+      background: var(--paper);
+    }
+
+    .pricing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 50px;
+    }
+
+    .pricing-toggle span {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--ink-400);
+      transition: color .2s ease;
+    }
+
+    .pricing-toggle span.active {
+      color: var(--navy-900);
+    }
+
+    .toggle-switch {
+      width: 54px;
+      height: 30px;
+      border-radius: 999px;
+      background: var(--navy-800);
+      border: none;
+      position: relative;
+      cursor: pointer;
+      flex: none;
+    }
+
+    .toggle-switch::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #fff;
+      transition: transform .25s ease;
+    }
+
+    .toggle-switch.on::after {
+      transform: translateX(24px);
+    }
+
+    .save-pill {
+      background: rgba(34, 198, 125, .12);
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .price-card.featured {
+      background: linear-gradient(160deg, var(--navy-900), var(--navy-700));
+      border-color: transparent;
+      transform: scale(1.04);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .price-card.featured:hover {
+      transform: scale(1.04) translateY(-6px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--orange), #E8901A);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .price-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .price-card.featured h3 {
+      color: #fff;
+    }
+
+    .price-card .plan-desc {
+      color: var(--ink-600);
+      font-size: .84rem;
+      margin-bottom: 22px;
+    }
+
+    .price-card.featured .plan-desc {
+      color: var(--ink-400);
+    }
+
+    .plan-price {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .plan-price .amount {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--navy-900);
+    }
+
+    .price-card.featured .plan-price .amount {
+      color: #fff;
+    }
+
+    .plan-price .period {
+      color: var(--ink-400);
+      font-size: .85rem;
+      padding-bottom: 8px;
+    }
+
+    .price-card.featured .plan-price .period {
+      color: var(--ink-400);
+    }
+
+    .plan-features {
+      margin-bottom: 28px;
+      flex: 1;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .88rem;
+      color: var(--ink-600);
+      padding: 7px 0;
+    }
+
+    .price-card.featured .plan-features li {
+      color: rgba(255, 255, 255, .82);
+    }
+
+    .plan-features li::before {
+      content: "✓";
+      width: 20px;
+      height: 20px;
+      flex: none;
+      border-radius: 50%;
+      background: rgba(34, 198, 125, .12);
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+
+    .plan-features li.disabled {
+      color: var(--ink-400);
+      opacity: .55;
+    }
+
+    .price-card.featured .plan-features li.disabled {
+      color: var(--ink-400);
+    }
+
+    .plan-features li.disabled::before {
+      content: "–";
+      background: rgba(255, 255, 255, .08);
+      color: var(--ink-400);
+    }
+
+    .price-card .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .price-card:not(.featured) .btn {
+      background: var(--navy-900);
+      color: #fff;
+    }
+
+    .pricing-note {
+      text-align: center;
+      color: var(--ink-400);
+      font-size: .85rem;
+      margin-top: 30px;
+    }
+
     /* ============ Services ============ */
     .services {
       padding: 100px 0 90px;
@@ -1362,8 +1964,30 @@
       .hero-visual {
         margin-top: 20px;
       }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+      .about-visual {
+        max-width: 480px;
+      }
       .services-grid {
         grid-template-columns: 1fr 1fr;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 460px;
+        margin-inline: auto;
+      }
+      .price-card.featured {
+        transform: scale(1);
+        order: -1;
+      }
+      .price-card.featured:hover {
+        transform: translateY(-6px);
       }
       .contact-grid {
         grid-template-columns: 1fr;
@@ -1432,6 +2056,12 @@
         display: flex;
       }
       .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-values {
         grid-template-columns: 1fr;
       }
       .footer-grid {
@@ -1688,6 +2318,99 @@
     </div>
   </section>
 
+  <!-- ===== About ===== -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-visual reveal-up">
+        <div class="about-art">
+          <div class="about-art-grid">
+            <div class="about-art-card tall">
+              <div>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 6.3L21 9l-5 4.4L17.5 21 12 17.3 6.5 21 8 13.4 3 9l6.4-.7L12 2z" fill="currentColor"/></svg>
+                <div class="num">5+ Yrs</div>
+                <small>Building digital products for growing businesses</small>
+              </div>
+              <small style="margin-top:16px;color:rgba(255,255,255,.55)">Founded with a simple goal — ship software that actually moves the needle for our clients.</small>
+            </div>
+            <div class="about-art-card">
+              <div class="num">100+</div>
+              <small>Projects shipped across web, mobile &amp; CRM</small>
+            </div>
+            <div class="about-art-card">
+              <div class="num">50+</div>
+              <small>Businesses we've partnered with</small>
+            </div>
+          </div>
+          <div class="about-badge-float">
+            <span class="ring">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <strong>ISO-style Process</strong>
+              <small>Structured delivery, every project</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-copy reveal-up" style="--delay:.1s">
+        <span class="eyebrow">About NiteshPro</span>
+        <h2>We're a small team obsessed with building <span class="text-gradient">software that works</span></h2>
+        <p>NiteshPro is a website, mobile app &amp; CRM development studio. We partner directly with founders and business owners — no account managers, no hand-offs — just a focused team that designs, builds and ships your product from the first sketch to production. Our approach is simple: understand the business first, then build the smallest thing that solves it well.</p>
+
+        <div class="about-values">
+          <div class="about-value">
+            <span class="v-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <strong>Ship Fast</strong>
+              <p>Working versions in weeks, not months.</p>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="v-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>
+            </span>
+            <div>
+              <strong>On-Time Delivery</strong>
+              <p>Clear milestones, no surprise delays.</p>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="v-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M8 12h8M8 8h8M8 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <div>
+              <strong>Transparent Process</strong>
+              <p>You see progress at every step, not just the end.</p>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="v-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.4-9.3-9A5.4 5.4 0 0112 5.5 5.4 5.4 0 0121.3 12c-2.3 4.6-9.3 9-9.3 9z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+            </span>
+            <div>
+              <strong>Long-Term Support</strong>
+              <p>We stay on after launch to fix, tune and grow the product.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-ctas">
+          <a href="#contact" class="btn btn-primary">Work With Us <span class="arrow">→</span></a>
+          <div class="about-founder">
+            <span class="founder-avatar">N</span>
+            <div>
+              <strong>Nitesh Kumar Singh</strong>
+              <small>Founder, NiteshPro</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== Services ===== -->
   <section class="services" id="services">
     <div class="container">
@@ -1742,6 +2465,209 @@
           <a href="#contact" class="link-more">Learn More <span class="arrow">→</span></a>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== Portfolio ===== -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-heading reveal-up">
+        <span class="eyebrow">Our Work</span>
+        <h2>Projects Our <span class="text-gradient">Clients</span> Trust Us With</h2>
+        <p>A look at the websites, apps and CRM systems we've shipped for real businesses — and the results they saw after launch.</p>
+      </div>
+
+      <div class="portfolio-filters reveal-up">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="website">Websites</button>
+        <button class="filter-btn" data-filter="app">Mobile Apps</button>
+        <button class="filter-btn" data-filter="crm">CRM Systems</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+        <article class="portfolio-card reveal-up" data-category="website">
+          <div class="portfolio-thumb thumb-blue">
+            <span class="portfolio-tag">Website</span>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.4" opacity=".5"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9S9.5 5.6 12 3z" stroke="#fff" stroke-width="1.3" fill="none" opacity=".8"/></svg>
+          </div>
+          <div class="portfolio-body">
+            <h3>Urban Bites — Restaurant Chain Website</h3>
+            <p>A fast, SEO-ready multi-location website with online ordering and table booking built in.</p>
+            <div class="portfolio-meta">
+              <div class="portfolio-result"><strong>+62%</strong><span>Online Orders</span></div>
+              <div class="portfolio-client">
+                <span class="client-avatar" style="background:linear-gradient(135deg,#4C82FF,#2E6BF2)">UB</span>
+                <small>Urban Bites</small>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app">
+          <div class="portfolio-thumb thumb-purple">
+            <span class="portfolio-tag">Mobile App</span>
+            <svg viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="#fff" stroke-width="1.4" opacity=".8"/><path d="M11 19h2" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="portfolio-body">
+            <h3>Fitcore — Gym Membership App</h3>
+            <p>Cross-platform app for class bookings, membership renewals and progress tracking.</p>
+            <div class="portfolio-meta">
+              <div class="portfolio-result"><strong>12K+</strong><span>Active Users</span></div>
+              <div class="portfolio-client">
+                <span class="client-avatar" style="background:linear-gradient(135deg,#9C8CFF,#7C6BF2)">FC</span>
+                <small>Fitcore Gym</small>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm">
+          <div class="portfolio-thumb thumb-green">
+            <span class="portfolio-tag">CRM</span>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#fff" stroke-width="1.4"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="#fff" stroke-width="1.4" fill="none"/><circle cx="17.5" cy="9" r="2.2" stroke="#fff" stroke-width="1.2"/><path d="M15.5 20c.2-2.5 1.8-4.2 4-4.6" stroke="#fff" stroke-width="1.2" fill="none"/></svg>
+          </div>
+          <div class="portfolio-body">
+            <h3>GreenCart — Sales &amp; Lead CRM</h3>
+            <p>Custom CRM to manage distributor leads, order pipelines and dispatch tracking.</p>
+            <div class="portfolio-meta">
+              <div class="portfolio-result"><strong>+38%</strong><span>Faster Follow-ups</span></div>
+              <div class="portfolio-client">
+                <span class="client-avatar" style="background:linear-gradient(135deg,#37D998,#22C67D)">GC</span>
+                <small>GreenCart</small>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal-up" data-category="website">
+          <div class="portfolio-thumb thumb-green">
+            <span class="portfolio-tag">Website</span>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10l8-6 8 6v10h-5v-6H9v6H4z" stroke="#fff" stroke-width="1.4" fill="none"/></svg>
+          </div>
+          <div class="portfolio-body">
+            <h3>Skyline Realty — Property Listings Site</h3>
+            <p>Property search with map filters, EMI calculator and agent lead capture forms.</p>
+            <div class="portfolio-meta">
+              <div class="portfolio-result"><strong>+80%</strong><span>Site Enquiries</span></div>
+              <div class="portfolio-client">
+                <span class="client-avatar" style="background:linear-gradient(135deg,#37D998,#1AA96A)">SR</span>
+                <small>Skyline Realty</small>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app">
+          <div class="portfolio-thumb thumb-blue">
+            <span class="portfolio-tag">Mobile App</span>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H8l-4 4V4z" stroke="#fff" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="portfolio-body">
+            <h3>Bright Learn — Student Learning App</h3>
+            <p>Course delivery app with quizzes, offline video downloads and progress reports for parents.</p>
+            <div class="portfolio-meta">
+              <div class="portfolio-result"><strong>4.7★</strong><span>App Store Rating</span></div>
+              <div class="portfolio-client">
+                <span class="client-avatar" style="background:linear-gradient(135deg,#4C82FF,#7FA6FF)">BL</span>
+                <small>Bright Learn</small>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm">
+          <div class="portfolio-thumb thumb-purple">
+            <span class="portfolio-tag">CRM</span>
+            <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="#fff" stroke-width="1.4"/><path d="M4 9h16M9 13h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <div class="portfolio-body">
+            <h3>Pulse Clinic — Patient Management CRM</h3>
+            <p>Appointment scheduling, patient history and billing in one internal dashboard.</p>
+            <div class="portfolio-meta">
+              <div class="portfolio-result"><strong>-40%</strong><span>Admin Time</span></div>
+              <div class="portfolio-client">
+                <span class="client-avatar" style="background:linear-gradient(135deg,#9C8CFF,#4b3a91)">PC</span>
+                <small>Pulse Clinic</small>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pricing ===== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-heading reveal-up">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple Plans For Every <span class="text-gradient">Stage</span> Of Your Business</h2>
+      </div>
+
+      <div class="pricing-toggle reveal-up">
+        <span class="active" id="labelMonthly">Monthly</span>
+        <button class="toggle-switch" id="billingToggle" aria-label="Toggle yearly billing"></button>
+        <span id="labelYearly">Yearly</span>
+        <span class="save-pill">Save 20%</span>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card reveal-up">
+          <h3>Starter</h3>
+          <p class="plan-desc">For small businesses that need a solid online presence.</p>
+          <div class="plan-price">
+            <span class="amount price-value" data-monthly="14999" data-yearly="11999">₹14,999</span>
+            <span class="period">/ project</span>
+          </div>
+          <ul class="plan-features">
+            <li>Up to 5-page responsive website</li>
+            <li>Basic SEO setup</li>
+            <li>Contact &amp; enquiry forms</li>
+            <li>1 month free support</li>
+            <li class="disabled">Mobile app</li>
+            <li class="disabled">Custom CRM</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)">Get Started</a>
+        </article>
+
+        <article class="price-card featured reveal-up" style="--delay:.1s">
+          <span class="popular-badge">Most Popular</span>
+          <h3>Professional</h3>
+          <p class="plan-desc">For growing businesses that need a website + app or CRM.</p>
+          <div class="plan-price">
+            <span class="amount price-value" data-monthly="49999" data-yearly="39999">₹49,999</span>
+            <span class="period">/ project</span>
+          </div>
+          <ul class="plan-features">
+            <li>Website + Android/iOS app or CRM</li>
+            <li>Advanced SEO &amp; analytics</li>
+            <li>Custom UI/UX design</li>
+            <li>3 months free support</li>
+            <li>Payment gateway integration</li>
+            <li class="disabled">Dedicated account manager</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </article>
+
+        <article class="price-card reveal-up" style="--delay:.2s">
+          <h3>Enterprise</h3>
+          <p class="plan-desc">For businesses that need a full website + app + CRM ecosystem.</p>
+          <div class="plan-price">
+            <span class="amount price-value" data-monthly="99999" data-yearly="79999">₹99,999</span>
+            <span class="period">/ project</span>
+          </div>
+          <ul class="plan-features">
+            <li>Website + Mobile App + CRM</li>
+            <li>Custom integrations &amp; automation</li>
+            <li>Priority development timeline</li>
+            <li>6 months free support</li>
+            <li>Dedicated account manager</li>
+            <li>Quarterly performance reviews</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)">Contact Sales</a>
+        </article>
+      </div>
+      <p class="pricing-note">Every project is scoped individually — these are starting prices. <a href="#contact" style="color:var(--blue-500);font-weight:600">Get a custom quote →</a></p>
     </div>
   </section>
 
@@ -1862,7 +2788,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">© 2026 NiteshPro. All Rights Reserved.</div>
+      <div class="container">© 2024 NiteshPro. All Rights Reserved.</div>
     </div>
   </footer>
 
@@ -1967,6 +2893,47 @@
       }
       document.addEventListener('scroll', setActiveLink, { passive: true });
       setActiveLink();
+
+      /* ---------- Portfolio filter ---------- */
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+
+          portfolioCards.forEach(card => {
+            const match = filter === 'all' || card.dataset.category === filter;
+            card.classList.toggle('is-hidden', !match);
+          });
+        });
+      });
+
+      /* ---------- Pricing billing toggle ---------- */
+      const billingToggle = document.getElementById('billingToggle');
+      const labelMonthly = document.getElementById('labelMonthly');
+      const labelYearly = document.getElementById('labelYearly');
+      const priceValues = document.querySelectorAll('.price-value');
+
+      function formatINR(num) {
+        return '₹' + Number(num).toLocaleString('en-IN');
+      }
+
+      if (billingToggle) {
+        billingToggle.addEventListener('click', () => {
+          const toYearly = !billingToggle.classList.contains('on');
+          billingToggle.classList.toggle('on', toYearly);
+          labelMonthly.classList.toggle('active', !toYearly);
+          labelYearly.classList.toggle('active', toYearly);
+
+          priceValues.forEach(el => {
+            const val = toYearly ? el.dataset.yearly : el.dataset.monthly;
+            el.textContent = formatINR(val);
+          });
+        });
+      }
 
       /* ---------- Reveal on scroll (IntersectionObserver) ---------- */
       const revealEls = document.querySelectorAll('.reveal-up');
