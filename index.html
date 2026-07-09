@@ -416,7 +416,14 @@
       opacity: 0;
       visibility: hidden;
       transition: opacity .3s ease, visibility .3s ease;
-      z-index: 995;
+      /* Must stay BELOW .site-header's z-index (900). .site-header
+         creates its own stacking context, so .main-nav / .nav-toggle
+         (even with higher z-index values) are trapped inside it and
+         only ever compete at "900" from the outside. If this overlay's
+         z-index is higher than 900, it paints on top of the whole
+         header — including the open menu and the close button —
+         making the menu look washed out and blocking clicks. */
+      z-index: 850;
     }
 
     .nav-overlay.show {
