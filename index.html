@@ -3,10 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NiteshPro — Website, Mobile App & CRM Development</title>
+  <title>NiteshPro Software Solutions — Website, Mobile App & CRM Development</title>
   <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="NiteshPro builds modern websites, powerful mobile apps and smart CRM solutions to automate your business and accelerate growth.">
+  <meta name="description" content="NiteshPro Software Solutions builds modern websites, mobile apps and CRM solutions. Get a free quote — responsive, SEO-friendly websites from ₹0.">
+  <meta name="keywords" content="NiteshPro Software Solutions, website development, mobile app development, CRM, free website quote, SEO friendly website, India">
+  <meta name="author" content="NiteshPro Software Solutions">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://niteshpro.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NiteshPro Software Solutions — Website, App & CRM | Free Quote">
+  <meta property="og:description" content="Build your professional, SEO-friendly website with NiteshPro Software Solutions. Free plan available — mobile, tablet & desktop ready.">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NiteshPro Software Solutions">
+  <meta name="twitter:description" content="Websites, mobile apps & CRM — get a free custom quote from NiteshPro Software Solutions.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "NiteshPro Software Solutions",
+    "description": "Website, mobile app and CRM development services in India.",
+    "telephone": "+91-8810751872",
+    "email": "niteshkumarsingh1500@gamil.com",
+    "areaServed": "IN",
+    "url": "https://niteshpro.com",
+    "priceRange": "₹0 - ₹2799",
+    "serviceType": ["Website Development", "Mobile App Development", "CRM Development", "UI/UX Design"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -232,9 +257,30 @@
       gap: 10px;
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.25rem;
       color: #fff;
       flex: none;
+      max-width: min(240px, 42vw);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-name {
+      font-size: 1.12rem;
+      font-weight: 800;
+      letter-spacing: -.01em;
+    }
+
+    .brand-tagline {
+      font-size: .62rem;
+      font-weight: 600;
+      color: var(--blue-300);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-top: 2px;
     }
 
     .brand-mark {
@@ -523,6 +569,23 @@
       display: flex;
       align-items: flex-start;
       gap: 12px;
+      cursor: pointer;
+      padding: 10px 12px;
+      margin: 0 -12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      transition: background .22s ease, border-color .22s ease, transform .22s ease;
+    }
+
+    .hero-features li:hover {
+      background: rgba(255, 255, 255, .06);
+      border-color: rgba(255, 255, 255, .12);
+      transform: translateX(4px);
+    }
+
+    .hero-features li:focus-visible {
+      outline: 2px solid var(--blue-300);
+      outline-offset: 2px;
     }
 
     .feature-icon {
@@ -1155,7 +1218,48 @@
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
       overflow: hidden;
-      transition: transform .35s ease, box-shadow .35s ease, opacity .3s ease;
+      transition: transform .35s ease, box-shadow .35s ease, opacity .3s ease, border-color .35s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .portfolio-card:focus-visible {
+      outline: 2px solid var(--blue-300);
+      outline-offset: 3px;
+    }
+
+    .portfolio-card .portfolio-view {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(6, 11, 26, .88));
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity .3s ease;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .portfolio-card .portfolio-view span {
+      background: linear-gradient(135deg, var(--blue-400), var(--blue-500));
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px -8px rgba(46, 107, 242, .65);
+      transform: translateY(8px);
+      transition: transform .3s ease;
+    }
+
+    .portfolio-card:hover .portfolio-view {
+      opacity: 1;
+    }
+
+    .portfolio-card:hover .portfolio-view span {
+      transform: translateY(0);
     }
 
     .portfolio-card.is-hidden {
@@ -1163,8 +1267,9 @@
     }
 
     .portfolio-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-soft);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 50px -20px rgba(46, 107, 242, .35);
+      border-color: rgba(127, 166, 255, .35);
     }
 
     .portfolio-thumb {
@@ -1330,9 +1435,25 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
       align-items: stretch;
+    }
+
+    .price-card.free-tier {
+      border-color: rgba(34, 198, 125, 0.35);
+      background: linear-gradient(180deg, #fff, rgba(34, 198, 125, 0.04));
+    }
+
+    .price-card.free-tier .free-badge {
+      display: inline-block;
+      background: rgba(34, 198, 125, 0.12);
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
     }
 
     .price-card {
@@ -1953,9 +2074,637 @@
       transition-delay: var(--delay, 0s);
     }
 
-    .reveal-up.in-view {
+    /* ============ Planner specific styling ============ */
+    .planner-section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-top: 24px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1.5px solid rgba(10, 17, 40, 0.06);
+      padding-bottom: 6px;
+    }
+    
+    .planner-section-title span {
+      background: linear-gradient(135deg, var(--blue-400), var(--blue-500));
+      color: #fff;
+      font-size: 0.75rem;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .interactive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .selector-card {
+      border: 1.5px solid #E2E6F0;
+      background: #FBFCFE;
+      border-radius: var(--radius-sm);
+      padding: 14px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      user-select: none;
+    }
+
+    .selector-card:hover {
+      border-color: var(--blue-300);
+      background: #F4F7FF;
+      transform: translateY(-2px);
+    }
+
+    .selector-card.active {
+      border-color: var(--blue-500);
+      background: #EEF3FF;
+      box-shadow: 0 8px 20px -8px rgba(46, 107, 242, 0.35);
+    }
+
+    .selector-card .card-icon {
+      font-size: 1.5rem;
+      transition: transform 0.22s ease;
+    }
+
+    .selector-card.active .card-icon {
+      transform: scale(1.15);
+    }
+
+    .selector-card .card-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy-900);
+    }
+    
+    .selector-card .card-price-badge {
+      font-size: 0.7rem;
+      background: rgba(46, 107, 242, 0.08);
+      color: var(--blue-500);
+      padding: 2px 6px;
+      border-radius: 99px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .selector-card .card-check {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--blue-500);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 800;
+      opacity: 0;
+      transform: scale(0.6);
+      transition: all 0.2s ease;
+    }
+
+    .selector-card.active .card-check {
       opacity: 1;
-      transform: translateY(0);
+      transform: scale(1);
+    }
+
+    /* Freebies / Bonus Checklist */
+    .bonus-container {
+      background: linear-gradient(135deg, rgba(34, 198, 125, 0.03), rgba(46, 107, 242, 0.03));
+      border: 1.5px dashed rgba(34, 198, 125, 0.35);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+    
+    .bonus-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 10px;
+    }
+
+    .bonus-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 0.78rem;
+      color: var(--ink-900);
+      background: #fff;
+      border: 1px solid rgba(10, 17, 40, 0.06);
+      padding: 10px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .bonus-checkbox:hover {
+      background: #F1FDF7;
+      border-color: rgba(34, 198, 125, 0.4);
+    }
+
+    .bonus-checkbox input {
+      margin-top: 2px;
+      accent-color: var(--green);
+      cursor: pointer;
+    }
+
+    .bonus-checkbox.active {
+      border-color: var(--green);
+      background: #F1FDF7;
+      box-shadow: 0 4px 12px -4px rgba(34, 198, 125, 0.2);
+    }
+
+    .bonus-checkbox .bonus-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bonus-checkbox .bonus-label {
+      font-weight: 600;
+      color: var(--navy-900);
+    }
+
+    .bonus-checkbox .bonus-desc {
+      font-size: 0.7rem;
+      color: var(--ink-600);
+      margin-top: 1px;
+    }
+
+    /* Live Summary Box */
+    .planner-summary-box {
+      background: var(--navy-950);
+      color: #fff;
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 20px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .planner-summary-info h4 {
+      color: #fff;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .planner-summary-info p {
+      color: var(--ink-400);
+      font-size: 0.76rem;
+    }
+
+    .planner-summary-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .planner-summary-badge .price {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--sky-300);
+    }
+
+    .planner-summary-badge .period {
+      font-size: 0.72rem;
+      color: var(--ink-400);
+    }
+
+    /* ============ Enquiry Wizard ============ */
+    .enquiry-wizard-head {
+      margin-bottom: 22px;
+    }
+
+    .enquiry-wizard-head h4 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .enquiry-wizard-head p {
+      color: var(--ink-600);
+      font-size: .86rem;
+    }
+
+    .wizard-progress {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .wizard-progress-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+
+    .wizard-progress-step span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #E8ECF5;
+      color: var(--ink-400);
+      font-size: .75rem;
+      font-weight: 700;
+      transition: all .25s ease;
+    }
+
+    .wizard-progress-step.active span,
+    .wizard-progress-step.done span {
+      background: linear-gradient(135deg, var(--blue-400), var(--blue-500));
+      color: #fff;
+      box-shadow: 0 6px 16px -6px rgba(46, 107, 242, .55);
+    }
+
+    .wizard-progress-step small {
+      display: block;
+      margin-top: 6px;
+      font-size: .68rem;
+      color: var(--ink-400);
+      font-weight: 600;
+    }
+
+    .wizard-progress-step.active small {
+      color: var(--blue-500);
+    }
+
+    .wizard-step {
+      display: none;
+      animation: wizardFade .35s ease;
+    }
+
+    .wizard-step.active {
+      display: block;
+    }
+
+    @keyframes wizardFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .wizard-nav {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .wizard-nav .btn {
+      flex: 1;
+    }
+
+    .feature-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .feature-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1.5px solid #E2E6F0;
+      background: #FBFCFE;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--ink-600);
+      cursor: pointer;
+      user-select: none;
+      transition: all .2s ease;
+    }
+
+    .feature-chip:hover {
+      border-color: var(--blue-300);
+      background: #F4F7FF;
+    }
+
+    .feature-chip.active {
+      border-color: var(--blue-500);
+      background: #EEF3FF;
+      color: var(--blue-500);
+    }
+
+    .feature-chip input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .live-preview-mini {
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .live-preview-mini .preview-bar {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+
+    .live-preview-mini .preview-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.25);
+    }
+
+    .live-preview-mini .preview-pages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .live-preview-mini .preview-page {
+      font-size: .68rem;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    .live-preview-mini .preview-page.active {
+      background: var(--blue-500);
+      border-color: var(--blue-400);
+    }
+
+    .field select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1.5px solid #E2E6F0;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      background: #FBFCFE;
+      color: var(--navy-900);
+      outline: none;
+      margin-bottom: 16px;
+    }
+
+    .field select:focus {
+      border-color: var(--blue-400);
+    }
+
+    /* ============ Modals ============ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 11, 26, .72);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      width: min(680px, 100%);
+      max-height: min(88vh, 860px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 30px 80px -20px rgba(6, 11, 26, .55);
+      transform: scale(.94) translateY(16px);
+      transition: transform .35s cubic-bezier(.34, 1.4, .64, 1);
+      position: relative;
+    }
+
+    .modal-overlay.open .modal-card {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, .92);
+      color: var(--navy-900);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 5;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .15);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .modal-close:hover {
+      transform: scale(1.08);
+      background: #fff;
+    }
+
+    .modal-hero {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .modal-hero svg {
+      width: 72px;
+      height: 72px;
+      opacity: .9;
+    }
+
+    .modal-body {
+      padding: 28px 28px 32px;
+      overflow-y: auto;
+    }
+
+    .modal-tag {
+      display: inline-block;
+      background: rgba(46, 107, 242, .1);
+      color: var(--blue-500);
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .modal-body h2 {
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .modal-body > p {
+      color: var(--ink-600);
+      font-size: .92rem;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    .modal-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .modal-stat {
+      background: var(--paper);
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius-sm);
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    .modal-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--blue-500);
+      margin-bottom: 2px;
+    }
+
+    .modal-stat span {
+      font-size: .72rem;
+      color: var(--ink-400);
+      font-weight: 600;
+    }
+
+    .modal-section {
+      margin-bottom: 20px;
+    }
+
+    .modal-section h4 {
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--ink-400);
+      margin-bottom: 10px;
+    }
+
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .modal-tags span {
+      background: #EEF3FF;
+      color: var(--blue-500);
+      font-size: .75rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    .modal-features-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .modal-features-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .88rem;
+      color: var(--ink-600);
+      padding: 8px 12px;
+      background: var(--paper);
+      border-radius: 8px;
+    }
+
+    .modal-features-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .modal-cta {
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .modal-feature-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue-400), var(--blue-500));
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .modal-feature-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .modal-card.modal-feature {
+      width: min(520px, 100%);
+    }
+
+    .modal-card.modal-feature .modal-body {
+      padding-top: 36px;
+    }
+
+    body.modal-open {
+      overflow: hidden;
     }
 
     /* ============ Responsive ============ */
@@ -1980,8 +2729,8 @@
         grid-template-columns: 1fr 1fr;
       }
       .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 460px;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 720px;
         margin-inline: auto;
       }
       .price-card.featured {
@@ -2138,6 +2887,25 @@
       .contact-card {
         padding: 20px;
       }
+      .contact-form .form-row {
+        grid-template-columns: 1fr;
+      }
+      .interactive-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .wizard-progress-step small {
+        font-size: .62rem;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 460px;
+      }
+      .modal-stats {
+        grid-template-columns: 1fr;
+      }
+      .modal-body {
+        padding: 22px 18px 26px;
+      }
       .grow-card {
         padding: 24px;
       }
@@ -2174,7 +2942,10 @@
     <div class="container header-inner">
       <a href="#home" class="brand">
         <span class="brand-mark">N</span>
-        <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+        <span class="brand-text">
+          <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+          <span class="brand-tagline">Software Solutions</span>
+        </span>
       </a>
 
       <nav class="main-nav" id="mainNav">
@@ -2228,23 +2999,23 @@
         <p class="hero-desc">We build modern, responsive websites, powerful mobile apps and smart CRM solutions to automate your business and accelerate growth.</p>
 
         <ul class="hero-features">
-          <li>
+          <li class="feature-popup-trigger" tabindex="0" role="button" data-feature="design" aria-label="Learn about Modern Design">
             <span class="feature-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="currentColor"/></svg>
             </span>
-            <div><strong>Modern Design</strong><small>Clean, Responsive &amp; User Friendly</small></div>
+            <div><strong>Modern Design</strong><small>Clean, Responsive &amp; User Friendly — tap for details</small></div>
           </li>
-          <li>
+          <li class="feature-popup-trigger" tabindex="0" role="button" data-feature="performance" aria-label="Learn about High Performance">
             <span class="feature-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
             </span>
-            <div><strong>High Performance</strong><small>Fast, Secure &amp; Scalable Solutions</small></div>
+            <div><strong>High Performance</strong><small>Fast, Secure &amp; Scalable — tap for details</small></div>
           </li>
-          <li>
+          <li class="feature-popup-trigger" tabindex="0" role="button" data-feature="custom" aria-label="Learn about Custom Solutions">
             <span class="feature-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
             </span>
-            <div><strong>Custom Solutions</strong><small>Tailored to Your Business Needs</small></div>
+            <div><strong>Custom Solutions</strong><small>Tailored to Your Business — tap for details</small></div>
           </li>
         </ul>
 
@@ -2266,7 +3037,7 @@
           <div class="device device-laptop">
             <div class="device-notch"></div>
             <div class="device-screen">
-              <div class="mock-nav"><span class="mock-logo">NiteshPro</span><span class="mock-links">Home · Services · About · Portfolio · Contact</span><span class="mock-btn">Get Started</span></div>
+              <div class="mock-nav"><span class="mock-logo">NiteshPro SS</span><span class="mock-links">Home · Services · About · Portfolio · Contact</span><span class="mock-btn">Get Started</span></div>
               <div class="mock-hero">
                 <h4>We Build Digital<br>Experiences That <em>Drive Results</em></h4>
                 <p>Sleek websites, strong apps and CRM systems engineered for growth.</p>
@@ -2356,9 +3127,9 @@
       </div>
 
       <div class="about-copy reveal-up" style="--delay:.1s">
-        <span class="eyebrow">About NiteshPro</span>
-        <h2>We're a small team obsessed with building <span class="text-gradient">software that works</span></h2>
-        <p>NiteshPro is a website, mobile app &amp; CRM development studio. We partner directly with founders and business owners — no account managers, no hand-offs — just a focused team that designs, builds and ships your product from the first sketch to production. Our approach is simple: understand the business first, then build the smallest thing that solves it well.</p>
+        <span class="eyebrow">About Us</span>
+        <h2>NiteshPro Software Solutions — <span class="text-gradient">Software That Works</span></h2>
+        <p>NiteshPro Software Solutions is a website, mobile app &amp; CRM development studio. We partner directly with founders and business owners — no account managers, no hand-offs — just a focused team that designs, builds and ships your product from the first sketch to production.</p>
 
         <div class="about-values">
           <div class="about-value">
@@ -2405,7 +3176,7 @@
             <span class="founder-avatar">N</span>
             <div>
               <strong>Nitesh Kumar Singh</strong>
-              <small>Founder, NiteshPro</small>
+              <small>Founder, NiteshPro Software Solutions</small>
             </div>
           </div>
         </div>
@@ -2487,7 +3258,8 @@
       </div>
 
       <div class="portfolio-grid" id="portfolioGrid">
-        <article class="portfolio-card reveal-up" data-category="website">
+        <article class="portfolio-card reveal-up" data-category="website" data-project="urban-bites" tabindex="0" role="button" aria-label="View Urban Bites project details">
+          <div class="portfolio-view"><span>View Project Details →</span></div>
           <div class="portfolio-thumb thumb-blue">
             <span class="portfolio-tag">Website</span>
             <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.4" opacity=".5"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9S9.5 5.6 12 3z" stroke="#fff" stroke-width="1.3" fill="none" opacity=".8"/></svg>
@@ -2505,7 +3277,8 @@
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app">
+        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app" data-project="fitcore" tabindex="0" role="button" aria-label="View Fitcore project details">
+          <div class="portfolio-view"><span>View Project Details →</span></div>
           <div class="portfolio-thumb thumb-purple">
             <span class="portfolio-tag">Mobile App</span>
             <svg viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="#fff" stroke-width="1.4" opacity=".8"/><path d="M11 19h2" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg>
@@ -2523,7 +3296,8 @@
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm">
+        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm" data-project="greencart" tabindex="0" role="button" aria-label="View GreenCart project details">
+          <div class="portfolio-view"><span>View Project Details →</span></div>
           <div class="portfolio-thumb thumb-green">
             <span class="portfolio-tag">CRM</span>
             <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#fff" stroke-width="1.4"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="#fff" stroke-width="1.4" fill="none"/><circle cx="17.5" cy="9" r="2.2" stroke="#fff" stroke-width="1.2"/><path d="M15.5 20c.2-2.5 1.8-4.2 4-4.6" stroke="#fff" stroke-width="1.2" fill="none"/></svg>
@@ -2541,7 +3315,8 @@
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" data-category="website">
+        <article class="portfolio-card reveal-up" data-category="website" data-project="skyline" tabindex="0" role="button" aria-label="View Skyline Realty project details">
+          <div class="portfolio-view"><span>View Project Details →</span></div>
           <div class="portfolio-thumb thumb-green">
             <span class="portfolio-tag">Website</span>
             <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10l8-6 8 6v10h-5v-6H9v6H4z" stroke="#fff" stroke-width="1.4" fill="none"/></svg>
@@ -2559,7 +3334,8 @@
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app">
+        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app" data-project="bright-learn" tabindex="0" role="button" aria-label="View Bright Learn project details">
+          <div class="portfolio-view"><span>View Project Details →</span></div>
           <div class="portfolio-thumb thumb-blue">
             <span class="portfolio-tag">Mobile App</span>
             <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H8l-4 4V4z" stroke="#fff" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg>
@@ -2577,7 +3353,8 @@
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm">
+        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm" data-project="pulse-clinic" tabindex="0" role="button" aria-label="View Pulse Clinic project details">
+          <div class="portfolio-view"><span>View Project Details →</span></div>
           <div class="portfolio-thumb thumb-purple">
             <span class="portfolio-tag">CRM</span>
             <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="#fff" stroke-width="1.4"/><path d="M4 9h16M9 13h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/></svg>
@@ -2614,22 +3391,44 @@
       </div>
 
       <div class="pricing-grid">
-        <article class="price-card reveal-up">
+        <article class="price-card free-tier reveal-up">
+          <span class="free-badge">100% Free Start</span>
+          <h3>Free</h3>
+          <p class="plan-desc">Perfect to launch your first online presence at zero cost.</p>
+          <div class="plan-price">
+            <span class="amount price-value" data-monthly="0" data-yearly="0">₹0</span>
+            <span class="period">/ forever</span>
+          </div>
+          <ul class="plan-features">
+            <li>1-page landing website</li>
+            <li>Mobile responsive layout</li>
+            <li>Basic contact form</li>
+            <li>WhatsApp chat button</li>
+            <li class="disabled">Custom domain</li>
+            <li class="disabled">Advanced SEO</li>
+            <li class="disabled">E-commerce</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)" data-plan="Free Plan">Get Free Website</a>
+        </article>
+
+        <article class="price-card reveal-up" style="--delay:.05s">
           <h3>Starter</h3>
           <p class="plan-desc">For small businesses that need a solid online presence.</p>
           <div class="plan-price">
-            <span class="amount price-value" data-monthly="999" data-yearly="11999">₹999</span>
-            <span class="period">/ project</span>
+            <span style="font-size: 0.95rem; text-decoration: line-through; color: var(--ink-400); margin-bottom: 8px; display: block;">₹2,499</span>
+            <span class="amount price-value" data-monthly="799" data-yearly="7999">₹799</span>
+            <span class="period" id="starterPeriod">/ mo</span>
           </div>
           <ul class="plan-features">
             <li>Up to 5-page responsive website</li>
             <li>Basic SEO setup</li>
             <li>Contact &amp; enquiry forms</li>
             <li>1 month free support</li>
+            <li>Free SSL &amp; Domain Setup</li>
             <li class="disabled">Mobile app</li>
             <li class="disabled">Custom CRM</li>
           </ul>
-          <a href="#contact" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)">Get Started</a>
+          <a href="#contact" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)" data-plan="Starter Plan">Get Started</a>
         </article>
 
         <article class="price-card featured reveal-up" style="--delay:.1s">
@@ -2637,8 +3436,9 @@
           <h3>Professional</h3>
           <p class="plan-desc">For growing businesses that need a website + app or CRM.</p>
           <div class="plan-price">
-            <span class="amount price-value" data-monthly="1999" data-yearly="39999">₹1999</span>
-            <span class="period">/ project</span>
+            <span style="font-size: 0.95rem; text-decoration: line-through; color: rgba(255,255,255,0.4); margin-bottom: 8px; display: block;">₹5,999</span>
+            <span class="amount price-value" data-monthly="1799" data-yearly="17999">₹1,799</span>
+            <span class="period" id="profPeriod">/ mo</span>
           </div>
           <ul class="plan-features">
             <li>Website + Android/iOS app or CRM</li>
@@ -2646,17 +3446,18 @@
             <li>Custom UI/UX design</li>
             <li>3 months free support</li>
             <li>Payment gateway integration</li>
-            <li class="disabled">Dedicated account manager</li>
+            <li>Free Domain, Hosting &amp; SSL (1 Yr)</li>
           </ul>
-          <a href="#contact" class="btn btn-primary">Get Started</a>
+          <a href="#contact" class="btn btn-primary" data-plan="Professional Plan">Get Started</a>
         </article>
 
         <article class="price-card reveal-up" style="--delay:.2s">
           <h3>Enterprise</h3>
           <p class="plan-desc">For businesses that need a full website + app + CRM ecosystem.</p>
           <div class="plan-price">
-            <span class="amount price-value" data-monthly="2999" data-yearly="79999">₹2999</span>
-            <span class="period">/ project</span>
+            <span style="font-size: 0.95rem; text-decoration: line-through; color: var(--ink-400); margin-bottom: 8px; display: block;">₹9,999</span>
+            <span class="amount price-value" data-monthly="2799" data-yearly="27999">₹2,799</span>
+            <span class="period" id="entPeriod">/ mo</span>
           </div>
           <ul class="plan-features">
             <li>Website + Mobile App + CRM</li>
@@ -2664,9 +3465,9 @@
             <li>Priority development timeline</li>
             <li>6 months free support</li>
             <li>Dedicated account manager</li>
-            <li>Quarterly performance reviews</li>
+            <li>Free Domain, Premium Hosting (1 Yr)</li>
           </ul>
-          <a href="#contact" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)">Contact Sales</a>
+          <a href="#contact" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)" data-plan="Enterprise Plan">Contact Sales</a>
         </article>
       </div>
       <p class="pricing-note">Every project is scoped individually — these are starting prices. <a href="#contact" style="color:var(--blue-500);font-weight:600">Get a custom quote →</a></p>
@@ -2697,38 +3498,234 @@
     </div>
   </section>
 
-  <!-- ===== Contact / CTA ===== -->
+  <!-- ===== Contact / Enquiry Wizard ===== -->
   <section class="contact-cta" id="contact">
     <div class="container contact-grid">
       <div class="contact-card reveal-up">
-        <h3>Get In Touch</h3>
-        <p>Have a project in mind? Let's build something great together!</p>
-        <ul class="contact-list">
-          <li><span class="c-icon">📞</span> 8810751872</li>
-          <li><span class="c-icon">✉️</span> niteshkumarsingh1500@gamil.com</li>
-          <li><span class="c-icon">📍</span> India</li>
-        </ul>
+        <div class="enquiry-wizard-head">
+          <h3>Build Your Website — Interactive Enquiry</h3>
+          <p>Fill the form below — all your selections &amp; details will be sent to us instantly via email.</p>
+        </div>
+
+        <div class="wizard-progress" id="wizardProgress" aria-label="Form progress">
+          <div class="wizard-progress-step active" data-step="1"><span>1</span><small>Contact</small></div>
+          <div class="wizard-progress-step" data-step="2"><span>2</span><small>Build Plan</small></div>
+          <div class="wizard-progress-step" data-step="3"><span>3</span><small>Submit</small></div>
+        </div>
+
         <form id="contactForm" class="contact-form" novalidate>
-          <div class="form-row">
-            <div class="field">
-              <input type="text" id="cf-name" placeholder=" " required>
-              <label for="cf-name">Your Name</label>
-              <span class="error-msg">Please enter your name</span>
+          <!-- STEP 1: Contact Information -->
+          <div class="wizard-step active" data-step="1">
+            <div class="planner-section-title"><span>1</span> Your Contact Details</div>
+            <div class="form-row">
+              <div class="field">
+                <input type="text" id="cf-name" name="from_name" placeholder=" " required autocomplete="name">
+                <label for="cf-name">Your Name *</label>
+                <span class="error-msg">Please enter your name</span>
+              </div>
+              <div class="field">
+                <input type="email" id="cf-email" name="reply_to" placeholder=" " required autocomplete="email">
+                <label for="cf-email">Your Email *</label>
+                <span class="error-msg">Enter a valid email</span>
+              </div>
             </div>
-            <div class="field">
-              <input type="email" id="cf-email" placeholder=" " required>
-              <label for="cf-email">Your Email</label>
-              <span class="error-msg">Enter a valid email</span>
+            <div class="form-row">
+              <div class="field">
+                <input type="tel" id="cf-phone" name="phone" placeholder=" " required autocomplete="tel">
+                <label for="cf-phone">Phone / WhatsApp *</label>
+                <span class="error-msg">Please enter your phone number</span>
+              </div>
+              <div class="field">
+                <input type="text" id="cf-company" name="company" placeholder=" " autocomplete="organization">
+                <label for="cf-company">Company (Optional)</label>
+              </div>
+            </div>
+            <div class="wizard-nav">
+              <button type="button" class="btn btn-primary wizard-next">Next: Build Plan <span class="arrow">→</span></button>
             </div>
           </div>
-          <div class="field">
-            <textarea id="cf-msg" rows="3" placeholder=" " required></textarea>
-            <label for="cf-msg">Tell us about your project</label>
-            <span class="error-msg">Please add a short message</span>
+
+          <!-- STEP 2: Interactive Website Builder -->
+          <div class="wizard-step" data-step="2">
+            <div class="planner-section-title"><span>2</span> Choose Service &amp; Plan</div>
+            <div class="interactive-grid">
+              <div class="selector-card active" data-type="service" data-value="Website Development">
+                <span class="card-icon">🌐</span>
+                <span class="card-label">Website</span>
+                <span class="card-price-badge">From ₹0</span>
+                <span class="card-check">✓</span>
+              </div>
+              <div class="selector-card" data-type="service" data-value="Mobile App Development">
+                <span class="card-icon">📱</span>
+                <span class="card-label">Mobile App</span>
+                <span class="card-price-badge">From ₹1,799/mo</span>
+                <span class="card-check">✓</span>
+              </div>
+              <div class="selector-card" data-type="service" data-value="CRM Development">
+                <span class="card-icon">⚙️</span>
+                <span class="card-label">CRM</span>
+                <span class="card-price-badge">Custom</span>
+                <span class="card-check">✓</span>
+              </div>
+              <div class="selector-card" data-type="service" data-value="UI/UX Design">
+                <span class="card-icon">🎨</span>
+                <span class="card-label">UI/UX</span>
+                <span class="card-price-badge">Special</span>
+                <span class="card-check">✓</span>
+              </div>
+            </div>
+
+            <div class="planner-section-title"><span>3</span> Select Budget / Plan</div>
+            <div class="interactive-grid">
+              <div class="selector-card" data-type="budget" data-value="Free Plan" data-price="₹0">
+                <span class="card-icon">🆓</span>
+                <span class="card-label">Free</span>
+                <span class="card-price-badge">₹0</span>
+                <span class="card-check">✓</span>
+              </div>
+              <div class="selector-card" data-type="budget" data-value="Starter Plan" data-price="₹799">
+                <span class="card-icon">🌱</span>
+                <span class="card-label">Starter</span>
+                <span class="card-price-badge">₹799/mo</span>
+                <span class="card-check">✓</span>
+              </div>
+              <div class="selector-card active" data-type="budget" data-value="Professional Plan" data-price="₹1,799">
+                <span class="card-icon">🚀</span>
+                <span class="card-label">Professional</span>
+                <span class="card-price-badge">₹1,799/mo</span>
+                <span class="card-check">✓</span>
+              </div>
+              <div class="selector-card" data-type="budget" data-value="Enterprise Plan" data-price="₹2,799">
+                <span class="card-icon">💎</span>
+                <span class="card-label">Enterprise</span>
+                <span class="card-price-badge">₹2,799/mo</span>
+                <span class="card-check">✓</span>
+              </div>
+            </div>
+
+            <div class="planner-section-title"><span>4</span> Website Pages Needed</div>
+            <div class="interactive-grid">
+              <div class="selector-card active" data-type="pages" data-value="1-3 Pages">
+                <span class="card-icon">📄</span>
+                <span class="card-label">1–3 Pages</span>
+                <span class="card-check">✓</span>
+              </div>
+              <div class="selector-card" data-type="pages" data-value="4-7 Pages">
+                <span class="card-icon">📑</span>
+                <span class="card-label">4–7 Pages</span>
+                <span class="card-check">✓</span>
+              </div>
+              <div class="selector-card" data-type="pages" data-value="8+ Pages">
+                <span class="card-icon">📚</span>
+                <span class="card-label">8+ Pages</span>
+                <span class="card-check">✓</span>
+              </div>
+            </div>
+
+            <div class="planner-section-title"><span>5</span> Features You Need</div>
+            <div class="feature-chips" id="featureChips">
+              <label class="feature-chip active"><input type="checkbox" name="features" value="Home Page" checked> Home</label>
+              <label class="feature-chip active"><input type="checkbox" name="features" value="About Page" checked> About</label>
+              <label class="feature-chip active"><input type="checkbox" name="features" value="Services Page" checked> Services</label>
+              <label class="feature-chip"><input type="checkbox" name="features" value="Portfolio/Gallery"> Portfolio</label>
+              <label class="feature-chip"><input type="checkbox" name="features" value="Blog"> Blog</label>
+              <label class="feature-chip active"><input type="checkbox" name="features" value="Contact Form" checked> Contact</label>
+              <label class="feature-chip"><input type="checkbox" name="features" value="E-commerce/Shop"> E-commerce</label>
+              <label class="feature-chip"><input type="checkbox" name="features" value="Online Booking"> Booking</label>
+              <label class="feature-chip"><input type="checkbox" name="features" value="Payment Gateway"> Payments</label>
+              <label class="feature-chip active"><input type="checkbox" name="features" value="SEO Package" checked> SEO</label>
+              <label class="feature-chip active"><input type="checkbox" name="features" value="WhatsApp Chat"> WhatsApp</label>
+              <label class="feature-chip"><input type="checkbox" name="features" value="Admin Dashboard"> Admin Panel</label>
+            </div>
+
+            <div class="live-preview-mini" id="livePreview" aria-hidden="true">
+              <div class="preview-bar"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span></div>
+              <div class="preview-pages" id="previewPages"></div>
+            </div>
+
+            <div class="planner-section-title"><span>6</span> Timeline</div>
+            <div class="field">
+              <select id="cf-timeline" name="timeline">
+                <option value="Urgent (< 2 weeks)">Urgent (Less than 2 weeks)</option>
+                <option value="Standard (1-2 months)" selected>Standard (1 to 2 months)</option>
+                <option value="Flexible (2+ months)">Flexible (2+ months)</option>
+              </select>
+            </div>
+
+            <div class="bonus-container">
+              <div class="bonus-title">🎁 Free Bonuses (Select to Claim)</div>
+              <div class="bonus-grid">
+                <label class="bonus-checkbox active">
+                  <input type="checkbox" id="bonus-domain" checked>
+                  <div class="bonus-details">
+                    <span class="bonus-label">Free Custom Domain</span>
+                    <span class="bonus-desc">(.com / .in) — Worth ₹999</span>
+                  </div>
+                </label>
+                <label class="bonus-checkbox active">
+                  <input type="checkbox" id="bonus-hosting" checked>
+                  <div class="bonus-details">
+                    <span class="bonus-label">Free 1-Yr Hosting + SSL</span>
+                    <span class="bonus-desc">Fast cloud SSD hosting</span>
+                  </div>
+                </label>
+                <label class="bonus-checkbox">
+                  <input type="checkbox" id="bonus-seo">
+                  <div class="bonus-details">
+                    <span class="bonus-label">Free SEO Setup</span>
+                    <span class="bonus-desc">Google indexing &amp; sitemaps</span>
+                  </div>
+                </label>
+                <label class="bonus-checkbox">
+                  <input type="checkbox" id="bonus-support">
+                  <div class="bonus-details">
+                    <span class="bonus-label">Free 1-Month Support</span>
+                    <span class="bonus-desc">Bug fixes &amp; tweaks</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn btn-outline wizard-back" style="color:var(--navy-900);border-color:var(--line-dark)">← Back</button>
+              <button type="button" class="btn btn-primary wizard-next">Next: Review <span class="arrow">→</span></button>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Send Message <span class="arrow">→</span></button>
-          <p class="form-success" id="formSuccess">✓ Thanks! Your message has been noted. We'll get back to you soon.</p>
+
+          <!-- STEP 3: Project Brief & Submit -->
+          <div class="wizard-step" data-step="3">
+            <div class="planner-section-title"><span>7</span> Tell Us About Your Project</div>
+            <div class="field">
+              <textarea id="cf-msg" name="message" rows="4" placeholder=" " required></textarea>
+              <label for="cf-msg">Project details, goals &amp; features *</label>
+              <span class="error-msg">Please add a short message (min 5 characters)</span>
+            </div>
+
+            <div class="planner-summary-box">
+              <div class="planner-summary-info">
+                <h4>Your Website Plan Summary</h4>
+                <p id="planner-summary-text">Professional Plan • 3 Features • 2 Bonuses</p>
+              </div>
+              <div class="planner-summary-badge">
+                <span class="price" id="planner-summary-price">₹1,799</span>
+                <span class="period" id="planner-summary-period">/ mo</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Submit Enquiry &amp; Get Free Quote <span class="arrow">→</span></button>
+            <p class="form-success" id="formSuccess" role="status">✓ Thanks! Your enquiry has been received. We'll contact you within 24 hours.</p>
+
+            <div class="wizard-nav" style="margin-top:12px">
+              <button type="button" class="btn btn-outline wizard-back" style="color:var(--navy-900);border-color:var(--line-dark)">← Back to Edit</button>
+            </div>
+          </div>
         </form>
+
+        <ul class="contact-list" style="margin-top:24px;margin-bottom:0">
+          <li><span class="c-icon">📞</span> <a href="tel:+918810751872">8810751872</a></li>
+          <li><span class="c-icon">✉️</span> <a href="mailto:niteshkumarsingh1500@gamil.com">niteshkumarsingh1500@gamil.com</a></li>
+          <li><span class="c-icon">📍</span> India — Remote &amp; On-site</li>
+        </ul>
       </div>
 
       <div class="grow-card reveal-up" style="--delay:.1s">
@@ -2756,9 +3753,12 @@
       <div class="footer-brand">
         <a href="#home" class="brand">
           <span class="brand-mark">N</span>
-          <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+          <span class="brand-text">
+            <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+            <span class="brand-tagline">Software Solutions</span>
+          </span>
         </a>
-        <p>We build websites, mobile apps &amp; CRM solutions that help businesses grow and succeed.</p>
+        <p>We build websites, mobile apps &amp; CRM solutions that help businesses grow — by NiteshPro Software Solutions.</p>
         <div class="social-row">
           <a href="#" aria-label="Facebook">f</a>
           <a href="#" aria-label="Instagram">◎</a>
@@ -2790,16 +3790,62 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">© 2026 NiteshPro. All Rights Reserved.</div>
+      <div class="container">© 2026 NiteshPro Software Solutions. All Rights Reserved.</div>
     </div>
   </footer>
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
+  <!-- ===== Portfolio Detail Modal ===== -->
+  <div class="modal-overlay" id="portfolioModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-card modal-portfolio">
+      <button class="modal-close" id="portfolioModalClose" aria-label="Close project details">×</button>
+      <div class="modal-hero thumb-blue" id="modalHero"></div>
+      <div class="modal-body">
+        <span class="modal-tag" id="modalTag">Website</span>
+        <h2 id="modalTitle">Project Title</h2>
+        <p id="modalDesc">Project description</p>
+        <div class="modal-stats" id="modalStats"></div>
+        <div class="modal-section">
+          <h4>Technologies Used</h4>
+          <div class="modal-tags" id="modalTech"></div>
+        </div>
+        <div class="modal-section">
+          <h4>Key Features Delivered</h4>
+          <ul class="modal-features-list" id="modalFeatures"></ul>
+        </div>
+        <a href="#contact" class="btn btn-primary modal-cta" id="modalCta">Start Similar Project <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Feature Detail Popup ===== -->
+  <div class="modal-overlay" id="featureModal" aria-hidden="true" role="dialog" aria-labelledby="featureModalTitle">
+    <div class="modal-card modal-feature">
+      <button class="modal-close" id="featureModalClose" aria-label="Close feature details">×</button>
+      <div class="modal-body">
+        <div class="modal-feature-icon" id="featureModalIcon"></div>
+        <span class="modal-tag">NiteshPro Software Solutions</span>
+        <h2 id="featureModalTitle">Feature Title</h2>
+        <p id="featureModalDesc">Feature description</p>
+        <div class="modal-section">
+          <h4>What's Included</h4>
+          <ul class="modal-features-list" id="featureModalList"></ul>
+        </div>
+        <a href="#contact" class="btn btn-primary modal-cta">Get This Feature <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+
+      /* ---------- EmailJS init (must run before form submit) ---------- */
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init('97AQm7GnlOsMTkgxj');
+      }
 
       /* ---------- Scroll progress bar ---------- */
       const progress = document.getElementById('scrollProgress');
@@ -2934,6 +3980,14 @@
             const val = toYearly ? el.dataset.yearly : el.dataset.monthly;
             el.textContent = formatINR(val);
           });
+
+          const starterPeriod = document.getElementById('starterPeriod');
+          const profPeriod = document.getElementById('profPeriod');
+          const entPeriod = document.getElementById('entPeriod');
+          
+          if (starterPeriod) starterPeriod.textContent = toYearly ? '/ yr' : '/ mo';
+          if (profPeriod) profPeriod.textContent = toYearly ? '/ yr' : '/ mo';
+          if (entPeriod) entPeriod.textContent = toYearly ? '/ yr' : '/ mo';
         });
       }
 
@@ -3090,65 +4144,466 @@
         { value: 25, color: '#7C6BF2' },
       ]);
 
-      /* ---------- Contact form validation & EmailJS Integration ---------- */
+      /* ---------- Portfolio & Feature Modals ---------- */
+      const PROJECTS = {
+        'urban-bites': {
+          title: 'Urban Bites — Restaurant Chain Website',
+          tag: 'Website Development',
+          thumbClass: 'thumb-blue',
+          desc: 'A fast, SEO-ready multi-location restaurant website with online ordering, table booking, and location-wise menu management. Built for speed on mobile and optimized for local search.',
+          stats: [{ val: '+62%', label: 'Online Orders' }, { val: '4.8s', label: 'Load Time' }, { val: '3 Mo', label: 'Delivery' }],
+          tech: ['HTML5', 'CSS3', 'JavaScript', 'SEO', 'WhatsApp API'],
+          features: ['Multi-location pages', 'Online food ordering', 'Table reservation system', 'Google Maps integration', 'Mobile-first responsive design', 'Admin menu panel']
+        },
+        'fitcore': {
+          title: 'Fitcore — Gym Membership App',
+          tag: 'Mobile App',
+          thumbClass: 'thumb-purple',
+          desc: 'Cross-platform fitness app for gym members to book classes, renew memberships, track workouts and receive trainer notifications — available on Android & iOS.',
+          stats: [{ val: '12K+', label: 'Active Users' }, { val: '4.6★', label: 'App Rating' }, { val: '5 Mo', label: 'Delivery' }],
+          tech: ['React Native', 'Firebase', 'Node.js', 'Push Notifications'],
+          features: ['Class & trainer booking', 'Membership renewal & payments', 'Workout progress tracking', 'Push reminders', 'Trainer chat', 'Attendance dashboard']
+        },
+        'greencart': {
+          title: 'GreenCart — Sales & Lead CRM',
+          tag: 'CRM System',
+          thumbClass: 'thumb-green',
+          desc: 'Custom CRM for a distribution company to manage distributor leads, order pipelines, dispatch tracking and sales team performance in one unified dashboard.',
+          stats: [{ val: '+38%', label: 'Faster Follow-ups' }, { val: '200+', label: 'Daily Leads' }, { val: '4 Mo', label: 'Delivery' }],
+          tech: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
+          features: ['Lead capture & scoring', 'Sales pipeline kanban', 'Order dispatch tracking', 'Team performance reports', 'WhatsApp lead alerts', 'Role-based access']
+        },
+        'skyline': {
+          title: 'Skyline Realty — Property Listings Site',
+          tag: 'Website Development',
+          thumbClass: 'thumb-green',
+          desc: 'Real estate listing platform with advanced property search, map filters, EMI calculator, virtual tour links and agent lead capture — driving 80% more enquiries.',
+          stats: [{ val: '+80%', label: 'Site Enquiries' }, { val: '500+', label: 'Listings' }, { val: '3 Mo', label: 'Delivery' }],
+          tech: ['WordPress', 'Custom PHP', 'Google Maps', 'SEO'],
+          features: ['Property search & filters', 'Map-based browsing', 'EMI calculator tool', 'Agent contact forms', 'Virtual tour embeds', 'SEO-optimized listings']
+        },
+        'bright-learn': {
+          title: 'Bright Learn — Student Learning App',
+          tag: 'Mobile App',
+          thumbClass: 'thumb-blue',
+          desc: 'EdTech app delivering video courses, live quizzes, offline downloads and parent progress reports — rated 4.7 stars on the app store.',
+          stats: [{ val: '4.7★', label: 'App Store' }, { val: '8K+', label: 'Students' }, { val: '6 Mo', label: 'Delivery' }],
+          tech: ['Flutter', 'Firebase', 'AWS S3', 'Razorpay'],
+          features: ['Video course delivery', 'Offline video downloads', 'Live quizzes & tests', 'Parent progress reports', 'Certificate generation', 'In-app payments']
+        },
+        'pulse-clinic': {
+          title: 'Pulse Clinic — Patient Management CRM',
+          tag: 'CRM System',
+          thumbClass: 'thumb-purple',
+          desc: 'Healthcare CRM for a multi-branch clinic — appointment scheduling, patient history, billing, prescription records and doctor availability in one system.',
+          stats: [{ val: '-40%', label: 'Admin Time' }, { val: '3', label: 'Branches' }, { val: '5 Mo', label: 'Delivery' }],
+          tech: ['Vue.js', 'Laravel', 'MySQL', 'SMS Gateway'],
+          features: ['Online appointment booking', 'Patient history records', 'Billing & invoicing', 'Doctor schedule management', 'SMS reminders', 'Multi-branch dashboard']
+        }
+      };
+
+      const FEATURES = {
+        design: {
+          title: 'Modern Design',
+          icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="currentColor"/></svg>',
+          desc: 'We craft clean, professional and user-friendly interfaces that look stunning on every device — from mobile phones to large desktop screens.',
+          list: ['Custom UI/UX design tailored to your brand', 'Fully responsive — mobile, tablet & laptop', 'Modern animations & smooth interactions', 'Accessibility-friendly layouts', 'Brand colour & typography system', 'Figma prototypes before development']
+        },
+        performance: {
+          title: 'High Performance',
+          icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>',
+          desc: 'Speed, security and scalability are built into every project from day one — so your website or app performs flawlessly under real-world load.',
+          list: ['Page load under 3 seconds on mobile', 'SSL certificate & HTTPS security', 'Cloud hosting with 99.9% uptime', 'Optimized images & lazy loading', 'Scalable architecture for growth', 'Regular security updates & backups']
+        },
+        custom: {
+          title: 'Custom Solutions',
+          icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>',
+          desc: 'No templates, no cookie-cutter solutions — every project is built specifically for your business goals, workflow and customers.',
+          list: ['Business-first discovery & planning', 'Custom features for your exact needs', 'Integration with your existing tools', 'Dedicated developer communication', 'Flexible payment & milestone delivery', 'Post-launch support & maintenance']
+        }
+      };
+
+      const portfolioModal = document.getElementById('portfolioModal');
+      const featureModal = document.getElementById('featureModal');
+
+      function openModal(modal) {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+      }
+
+      function closeModal(modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        if (!document.querySelector('.modal-overlay.open')) {
+          document.body.classList.remove('modal-open');
+        }
+      }
+
+      function openPortfolioModal(projectId) {
+        const project = PROJECTS[projectId];
+        if (!project) return;
+
+        const hero = document.getElementById('modalHero');
+        hero.className = 'modal-hero ' + project.thumbClass;
+        document.getElementById('modalTag').textContent = project.tag;
+        document.getElementById('modalTitle').textContent = project.title;
+        document.getElementById('modalDesc').textContent = project.desc;
+
+        document.getElementById('modalStats').innerHTML = project.stats.map(s =>
+          `<div class="modal-stat"><strong>${s.val}</strong><span>${s.label}</span></div>`
+        ).join('');
+
+        document.getElementById('modalTech').innerHTML = project.tech.map(t =>
+          `<span>${t}</span>`
+        ).join('');
+
+        document.getElementById('modalFeatures').innerHTML = project.features.map(f =>
+          `<li>${f}</li>`
+        ).join('');
+
+        openModal(portfolioModal);
+      }
+
+      function openFeatureModal(featureId) {
+        const feature = FEATURES[featureId];
+        if (!feature) return;
+
+        document.getElementById('featureModalIcon').innerHTML = feature.icon;
+        document.getElementById('featureModalTitle').textContent = feature.title;
+        document.getElementById('featureModalDesc').textContent = feature.desc;
+        document.getElementById('featureModalList').innerHTML = feature.list.map(item =>
+          `<li>${item}</li>`
+        ).join('');
+
+        openModal(featureModal);
+      }
+
+      document.querySelectorAll('.portfolio-card[data-project]').forEach(card => {
+        const open = () => openPortfolioModal(card.dataset.project);
+        card.addEventListener('click', open);
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            open();
+          }
+        });
+      });
+
+      document.querySelectorAll('.feature-popup-trigger').forEach(el => {
+        const open = () => openFeatureModal(el.dataset.feature);
+        el.addEventListener('click', open);
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            open();
+          }
+        });
+      });
+
+      document.getElementById('portfolioModalClose')?.addEventListener('click', () => closeModal(portfolioModal));
+      document.getElementById('featureModalClose')?.addEventListener('click', () => closeModal(featureModal));
+
+      [portfolioModal, featureModal].forEach(modal => {
+        modal?.addEventListener('click', (e) => {
+          if (e.target === modal) closeModal(modal);
+        });
+        modal?.querySelector('.modal-cta')?.addEventListener('click', () => closeModal(modal));
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (portfolioModal?.classList.contains('open')) closeModal(portfolioModal);
+          if (featureModal?.classList.contains('open')) closeModal(featureModal);
+        }
+      });
+
+      /* ---------- Contact form — Wizard + EmailJS ---------- */
       const form = document.getElementById('contactForm');
       const successMsg = document.getElementById('formSuccess');
+      const wizardSteps = form ? form.querySelectorAll('.wizard-step') : [];
+      const wizardProgressSteps = document.querySelectorAll('.wizard-progress-step');
+      let currentWizardStep = 1;
+
+      const EMAILJS_SERVICE_ID = 'service_5rauum1';
+      const EMAILJS_TEMPLATE_ID = 'template_24jltgv';
 
       function validateField(field, condition) {
+        if (!field) return false;
         field.classList.toggle('invalid', !condition);
         return condition;
       }
 
+      function getInputValue(id) {
+        const el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      }
+
+      function getActiveCardValue(type, fallback) {
+        const card = form?.querySelector(`.selector-card[data-type="${type}"].active`);
+        return card ? card.dataset.value : fallback;
+      }
+
+      function getActiveCardPrice(type, fallback) {
+        const card = form?.querySelector(`.selector-card[data-type="${type}"].active`);
+        return card ? card.dataset.price : fallback;
+      }
+
+      function getSelectedFeatures() {
+        if (!form) return [];
+        return Array.from(form.querySelectorAll('.feature-chip input:checked')).map(cb => cb.value);
+      }
+
+      function getClaimedBonuses() {
+        const list = [];
+        if (document.getElementById('bonus-domain')?.checked) list.push('Free Custom Domain (.com/.in)');
+        if (document.getElementById('bonus-hosting')?.checked) list.push('Free 1-Year Cloud Hosting & SSL');
+        if (document.getElementById('bonus-seo')?.checked) list.push('Free Basic SEO Setup');
+        if (document.getElementById('bonus-support')?.checked) list.push('Free 1-Month Post-Launch Support');
+        return list;
+      }
+
+      function buildEnquiryReport() {
+        const name = getInputValue('cf-name');
+        const email = getInputValue('cf-email');
+        const phone = getInputValue('cf-phone');
+        const company = getInputValue('cf-company') || 'Not provided';
+        const brief = getInputValue('cf-msg');
+        const serviceVal = getActiveCardValue('service', 'Website Development');
+        const budgetVal = getActiveCardValue('budget', 'Professional Plan');
+        const budgetPrice = getActiveCardPrice('budget', '₹1,799');
+        const pagesVal = getActiveCardValue('pages', '1-3 Pages');
+        const timelineVal = getInputValue('cf-timeline') || 'Standard (1-2 months)';
+        const features = getSelectedFeatures();
+        const bonuses = getClaimedBonuses();
+
+        return `=== NEW WEBSITE ENQUIRY ===
+Date: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+
+CONTACT DETAILS:
+Name: ${name}
+Email: ${email}
+Phone/WhatsApp: ${phone}
+Company: ${company}
+
+PROJECT PLAN:
+Service: ${serviceVal}
+Budget/Plan: ${budgetVal} (${budgetPrice})
+Website Pages: ${pagesVal}
+Timeline: ${timelineVal}
+
+FEATURES SELECTED:
+${features.map(f => '• ' + f).join('\n') || 'None'}
+
+FREE BONUSES CLAIMED:
+${bonuses.map(b => '• ' + b).join('\n') || 'None'}
+
+PROJECT BRIEF:
+${brief}
+============================`;
+      }
+
+      function updateLivePreview() {
+        const previewPages = document.getElementById('previewPages');
+        if (!previewPages) return;
+        const features = getSelectedFeatures();
+        previewPages.innerHTML = features.length
+          ? features.map(f => `<span class="preview-page active">${f.replace(' Page', '').replace(' Package', '')}</span>`).join('')
+          : '<span class="preview-page">Select features above</span>';
+      }
+
+      function updatePlannerSummary() {
+        const budget = getActiveCardValue('budget', 'Professional Plan');
+        const budgetPrice = getActiveCardPrice('budget', '₹1,799');
+        const features = getSelectedFeatures();
+        const bonuses = getClaimedBonuses();
+
+        const summaryTextEl = document.getElementById('planner-summary-text');
+        const summaryPriceEl = document.getElementById('planner-summary-price');
+        const summaryPeriodEl = document.getElementById('planner-summary-period');
+
+        if (summaryTextEl) {
+          summaryTextEl.textContent = `${budget} • ${features.length} Feature(s) • ${bonuses.length} Bonus(es)`;
+        }
+        if (summaryPriceEl) summaryPriceEl.textContent = budgetPrice;
+        if (summaryPeriodEl) {
+          summaryPeriodEl.textContent = budgetPrice === '₹0' ? ' Free' : '/ mo';
+        }
+        updateLivePreview();
+      }
+
+      function goToWizardStep(step) {
+        currentWizardStep = step;
+        wizardSteps.forEach(s => s.classList.toggle('active', Number(s.dataset.step) === step));
+        wizardProgressSteps.forEach(p => {
+          const n = Number(p.dataset.step);
+          p.classList.toggle('active', n === step);
+          p.classList.toggle('done', n < step);
+        });
+        if (step === 3) updatePlannerSummary();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      function validateStep1() {
+        const nameInput = document.getElementById('cf-name');
+        const emailInput = document.getElementById('cf-email');
+        const phoneInput = document.getElementById('cf-phone');
+        const nameValid = validateField(nameInput.closest('.field'), nameInput.value.trim().length > 1);
+        const emailValid = validateField(emailInput.closest('.field'), /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim()));
+        const phoneValid = validateField(phoneInput.closest('.field'), phoneInput.value.trim().length >= 8);
+        return nameValid && emailValid && phoneValid;
+      }
+
+      function resetFormUI() {
+        form.querySelectorAll('.selector-card').forEach(c => c.classList.remove('active'));
+        form.querySelector('.selector-card[data-type="service"][data-value="Website Development"]')?.classList.add('active');
+        form.querySelector('.selector-card[data-type="budget"][data-value="Professional Plan"]')?.classList.add('active');
+        form.querySelector('.selector-card[data-type="pages"][data-value="1-3 Pages"]')?.classList.add('active');
+
+        form.querySelectorAll('.feature-chip').forEach(chip => {
+          const cb = chip.querySelector('input');
+          const defaultOn = ['Home Page', 'About Page', 'Services Page', 'Contact Form', 'SEO Package', 'WhatsApp Chat'];
+          if (cb) {
+            cb.checked = defaultOn.includes(cb.value);
+            chip.classList.toggle('active', cb.checked);
+          }
+        });
+
+        form.querySelectorAll('.bonus-checkbox').forEach(label => {
+          const cb = label.querySelector('input');
+          if (cb) {
+            const checked = cb.id === 'bonus-domain' || cb.id === 'bonus-hosting';
+            cb.checked = checked;
+            label.classList.toggle('active', checked);
+          }
+        });
+
+        form.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
+        goToWizardStep(1);
+        updatePlannerSummary();
+      }
+
       if (form) {
+        form.querySelectorAll('.selector-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const cardType = card.dataset.type;
+            form.querySelectorAll(`.selector-card[data-type="${cardType}"]`).forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            updatePlannerSummary();
+          });
+        });
+
+        form.querySelectorAll('.feature-chip input').forEach(cb => {
+          cb.addEventListener('change', () => {
+            cb.closest('.feature-chip')?.classList.toggle('active', cb.checked);
+            updatePlannerSummary();
+          });
+        });
+
+        form.querySelectorAll('.bonus-checkbox input').forEach(cb => {
+          cb.addEventListener('change', () => {
+            cb.closest('.bonus-checkbox')?.classList.toggle('active', cb.checked);
+            updatePlannerSummary();
+          });
+        });
+
+        document.getElementById('cf-timeline')?.addEventListener('change', updatePlannerSummary);
+
+        form.querySelectorAll('.wizard-next').forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (currentWizardStep === 1 && !validateStep1()) return;
+            if (currentWizardStep < 3) goToWizardStep(currentWizardStep + 1);
+          });
+        });
+
+        form.querySelectorAll('.wizard-back').forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (currentWizardStep > 1) goToWizardStep(currentWizardStep - 1);
+          });
+        });
+
+        document.querySelectorAll('a[data-plan]').forEach(link => {
+          link.addEventListener('click', () => {
+            const plan = link.dataset.plan;
+            setTimeout(() => {
+              const budgetCard = form.querySelector(`.selector-card[data-type="budget"][data-value="${plan}"]`);
+              if (budgetCard) {
+                form.querySelectorAll('.selector-card[data-type="budget"]').forEach(c => c.classList.remove('active'));
+                budgetCard.classList.add('active');
+                updatePlannerSummary();
+              }
+              goToWizardStep(2);
+            }, 400);
+          });
+        });
+
+        updatePlannerSummary();
+
         form.addEventListener('submit', (e) => {
           e.preventDefault();
           successMsg.classList.remove('show');
 
-          const nameInput = document.getElementById('cf-name');
-          const emailInput = document.getElementById('cf-email');
-          const msgInput = document.getElementById('cf-msg');
-          const submitBtn = form.querySelector('button[type="submit"]');
-
-          const nameValid = validateField(nameInput.closest('.field'), nameInput.value.trim().length > 1);
-          const emailValid = validateField(emailInput.closest('.field'), /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput
-            .value.trim()));
-          const msgValid = validateField(msgInput.closest('.field'), msgInput.value.trim().length > 4);
-
-          if (nameValid && emailValid && msgValid) {
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Sending... <span class="arrow">⏳</span>';
-            submitBtn.disabled = true;
-
-            const params = {
-              email: emailInput.value.trim(),
-              name: nameInput.value.trim(),
-              title: "Portfolio Contact Message",
-              message: msgInput.value.trim()
-            };
-
-            // EmailJS keys - replace with your own if needed
-            const serviceID = 'service_5rauum1';
-            const templateID = 'template_24jltgv';
-
-            emailjs.send(serviceID, templateID, params)
-              .then(function(response) {
-                successMsg.classList.add('show');
-                form.reset();
-                form.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
-                setTimeout(() => successMsg.classList.remove('show'), 5000);
-              }, function(error) {
-                alert('Failed to send message. Please try again. Error: ' + JSON.stringify(error));
-              })
-              .finally(function() {
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-              });
+          if (!validateStep1()) {
+            goToWizardStep(1);
+            return;
           }
+
+          const msgInput = document.getElementById('cf-msg');
+          const msgValid = validateField(msgInput.closest('.field'), msgInput.value.trim().length >= 5);
+          if (!msgValid) return;
+
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.innerHTML;
+          submitBtn.innerHTML = 'Sending... <span class="arrow">⏳</span>';
+          submitBtn.disabled = true;
+
+          const name = getInputValue('cf-name');
+          const email = getInputValue('cf-email');
+          const phone = getInputValue('cf-phone');
+          const fullReport = buildEnquiryReport();
+
+          /* Single `title` variable carries ALL enquiry data.
+             EmailJS template should use:
+             Subject: New Enquiry from {{from_name}}
+             Body: {{title}}
+             Reply-To is set via reply_to param below. */
+          const params = {
+            title: fullReport,
+            reply_to: email,
+            from_name: name,
+            from_email: email,
+            name: name,
+            email: email,
+            user_name: name,
+            user_email: email,
+            phone: phone,
+            message: fullReport,
+            user_message: fullReport
+          };
+
+          emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+            .then(() => {
+              successMsg.classList.add('show');
+              form.reset();
+              resetFormUI();
+              setTimeout(() => successMsg.classList.remove('show'), 6000);
+            })
+            .catch((error) => {
+              console.error('EmailJS error:', error);
+              alert('Enquiry send failed. Please WhatsApp us at 8810751872 or email niteshkumarsingh1500@gamil.com');
+            })
+            .finally(() => {
+              submitBtn.innerHTML = originalBtnText;
+              submitBtn.disabled = false;
+            });
         });
 
-        form.querySelectorAll('input, textarea').forEach(inputEl => {
+        form.querySelectorAll('input, textarea, select').forEach(inputEl => {
           inputEl.addEventListener('input', () => {
-            inputEl.closest('.field').classList.remove('invalid');
+            inputEl.closest('.field')?.classList.remove('invalid');
           });
         });
       }
@@ -3168,11 +4623,6 @@
           }
         });
       });
-
-      // Initialize EmailJS
-      (function() {
-        emailjs.init("97AQm7GnlOsMTkgxj");
-      })();
 
     });
 
