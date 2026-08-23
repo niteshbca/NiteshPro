@@ -3,10 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NiteshPro — Website, Mobile App & CRM Development</title>
+  <title>NiteshPro Software Solutions — Website, Mobile App & CRM Development</title>
   <link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#ffffff">
-  <meta name="description" content="NiteshPro builds modern websites, powerful mobile apps and smart CRM solutions to automate your business and accelerate growth.">
+  <meta name="theme-color" content="#0A1128">
+  <meta name="description" content="NiteshPro Software Solutions builds SEO-friendly websites, mobile apps & CRM systems. Get a free quote — responsive, fast & built for growth.">
+  <meta name="keywords" content="NiteshPro Software Solutions, website development, mobile app development, CRM development, SEO friendly website, India">
+  <meta name="author" content="NiteshPro Software Solutions">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://niteshpro.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NiteshPro Software Solutions — Digital Development Studio">
+  <meta property="og:description" content="Build your website, mobile app or CRM with NiteshPro Software Solutions. Free consultation, SEO-ready & mobile responsive.">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NiteshPro Software Solutions">
+  <meta name="twitter:description" content="Website, Mobile App & CRM Development — Get Free Quote Today">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"NiteshPro Software Solutions","url":"https://niteshpro.com","telephone":"+91-8810751872","email":"niteshkumarsingh1500@gmail.com","description":"Website, mobile app and CRM development company in India","areaServed":"IN","sameAs":[]}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -1330,9 +1344,31 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
       align-items: stretch;
+    }
+
+    .price-card.free-tier {
+      border: 2px dashed rgba(34, 198, 125, .45);
+      background: linear-gradient(180deg, rgba(34,198,125,.06), #fff);
+    }
+
+    .price-card.free-tier .plan-price .amount {
+      color: var(--green);
+    }
+
+    .free-badge {
+      display: inline-block;
+      background: rgba(34, 198, 125, .15);
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
     }
 
     .price-card {
@@ -1593,6 +1629,14 @@
       gap: 6px;
     }
 
+    button.link-more {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: var(--font-body);
+      cursor: pointer;
+    }
+
     .link-more .arrow {
       transition: transform .25s ease;
     }
@@ -1772,6 +1816,403 @@
 
     .form-success.show {
       display: block;
+    }
+
+    /* ============ Enquiry Builder ============ */
+    .enquiry-section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 40px;
+    }
+
+    .enquiry-section-head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .enquiry-section-head p {
+      color: var(--ink-600);
+      line-height: 1.65;
+    }
+
+    .enquiry-builder {
+      background: linear-gradient(160deg, var(--navy-900), var(--navy-800));
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      color: #fff;
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .enquiry-builder::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(76,130,255,.25), transparent 70%);
+      pointer-events: none;
+    }
+
+    .enquiry-builder h4 {
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+
+    .build-steps {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .build-step {
+      flex: 1;
+      min-width: 70px;
+      text-align: center;
+      padding: 8px 6px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      font-size: .72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.5);
+      transition: all .25s ease;
+    }
+
+    .build-step.active {
+      background: rgba(76,130,255,.25);
+      border-color: var(--blue-400);
+      color: #fff;
+    }
+
+    .build-step.done {
+      background: rgba(34,198,125,.2);
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .build-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .build-chip {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.85);
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s ease;
+      font-family: var(--font-body);
+    }
+
+    .build-chip:hover {
+      border-color: var(--blue-300);
+      background: rgba(76,130,255,.15);
+    }
+
+    .build-chip.selected {
+      background: linear-gradient(135deg, var(--blue-400), var(--blue-500));
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 8px 20px -8px rgba(46,107,242,.6);
+    }
+
+    .build-preview {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      min-height: 120px;
+    }
+
+    .build-preview small {
+      display: block;
+      color: rgba(255,255,255,.5);
+      font-size: .72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 8px;
+    }
+
+    .build-preview p {
+      color: rgba(255,255,255,.88);
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    .build-preview .preview-empty {
+      color: rgba(255,255,255,.4);
+      font-style: italic;
+    }
+
+    .field select {
+      width: 100%;
+      padding: 16px 14px 8px;
+      border-radius: 10px;
+      border: 1.5px solid #E2E6F0;
+      font-family: var(--font-body);
+      font-size: .92rem;
+      background: #FBFCFE;
+      transition: border-color .2s ease;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A93AC' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      cursor: pointer;
+    }
+
+    .field select:focus {
+      outline: none;
+      border-color: var(--blue-400);
+    }
+
+    .field select:focus+label,
+    .field select:valid+label {
+      top: 5px;
+      font-size: .66rem;
+      color: var(--blue-500);
+      font-weight: 600;
+    }
+
+    .field.invalid select {
+      border-color: #E1483F;
+    }
+
+    .brand-tag {
+      display: block;
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--blue-300);
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+
+    .brand-name-wrap {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    /* ============ Modals ============ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 11, 26, .72);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-box {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 30px 80px -20px rgba(10, 17, 40, .45);
+      transform: translateY(24px) scale(.97);
+      transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .modal-overlay.open .modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-box.modal-lg {
+      max-width: 720px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 28px 28px 0;
+    }
+
+    .modal-header h3 {
+      font-size: 1.35rem;
+      line-height: 1.3;
+    }
+
+    .modal-tag {
+      display: inline-block;
+      background: rgba(46, 107, 242, .12);
+      color: var(--blue-500);
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .modal-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--line-dark);
+      background: var(--paper);
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--ink-600);
+      flex: none;
+      transition: background .2s ease;
+    }
+
+    .modal-close:hover {
+      background: #E8ECF5;
+    }
+
+    .modal-body {
+      padding: 20px 28px 28px;
+    }
+
+    .modal-body p {
+      color: var(--ink-600);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .modal-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .modal-stat {
+      background: var(--paper);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      text-align: center;
+    }
+
+    .modal-stat strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--blue-500);
+      font-family: var(--font-display);
+    }
+
+    .modal-stat span {
+      font-size: .72rem;
+      color: var(--ink-400);
+    }
+
+    .modal-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .modal-feature-pill {
+      background: rgba(46, 107, 242, .1);
+      color: var(--blue-500);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    .modal-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .modal-tech span {
+      background: var(--navy-900);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 6px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .service-card .link-more,
+    .service-card .btn-features {
+      cursor: pointer;
+    }
+
+    .portfolio-card {
+      cursor: pointer;
+    }
+
+    .portfolio-card .view-project {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue-300);
+      font-size: .82rem;
+      font-weight: 600;
+      margin-top: 12px;
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+
+    .portfolio-card:hover .view-project {
+      opacity: 1;
+    }
+
+    .feature-list-modal li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line-dark);
+      color: var(--ink-600);
+      font-size: .9rem;
+    }
+
+    .feature-list-modal li:last-child {
+      border-bottom: none;
+    }
+
+    .feature-list-modal li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+      flex: none;
+    }
+
+    body.modal-open {
+      overflow: hidden;
     }
 
     .grow-card {
@@ -1959,6 +2400,12 @@
     }
 
     /* ============ Responsive ============ */
+    @media (max-width:1200px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width:1024px) {
       .hero-inner {
         grid-template-columns: 1fr;
@@ -1980,9 +2427,8 @@
         grid-template-columns: 1fr 1fr;
       }
       .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 460px;
-        margin-inline: auto;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: none;
       }
       .price-card.featured {
         transform: scale(1);
@@ -2174,7 +2620,10 @@
     <div class="container header-inner">
       <a href="#home" class="brand">
         <span class="brand-mark">N</span>
-        <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+        <span class="brand-name-wrap">
+          <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+          <span class="brand-tag">Software Solutions</span>
+        </span>
       </a>
 
       <nav class="main-nav" id="mainNav">
@@ -2220,7 +2669,7 @@
 
     <div class="container hero-inner">
       <div class="hero-copy reveal-up">
-        <span class="eyebrow-pill">We build solutions that grow your business</span>
+        <span class="eyebrow-pill">NiteshPro Software Solutions — We build solutions that grow your business</span>
         <h1 class="hero-title">
           Website, Mobile App &amp;<br>
           CRM Development <span class="text-gradient">Solutions</span>
@@ -2266,7 +2715,7 @@
           <div class="device device-laptop">
             <div class="device-notch"></div>
             <div class="device-screen">
-              <div class="mock-nav"><span class="mock-logo">NiteshPro</span><span class="mock-links">Home · Services · About · Portfolio · Contact</span><span class="mock-btn">Get Started</span></div>
+              <div class="mock-nav"><span class="mock-logo">NiteshPro Software Solutions</span><span class="mock-links">Home · Services · About · Portfolio · Contact</span><span class="mock-btn">Get Started</span></div>
               <div class="mock-hero">
                 <h4>We Build Digital<br>Experiences That <em>Drive Results</em></h4>
                 <p>Sleek websites, strong apps and CRM systems engineered for growth.</p>
@@ -2356,9 +2805,9 @@
       </div>
 
       <div class="about-copy reveal-up" style="--delay:.1s">
-        <span class="eyebrow">About NiteshPro</span>
+        <span class="eyebrow">About NiteshPro Software Solutions</span>
         <h2>We're a small team obsessed with building <span class="text-gradient">software that works</span></h2>
-        <p>NiteshPro is a website, mobile app &amp; CRM development studio. We partner directly with founders and business owners — no account managers, no hand-offs — just a focused team that designs, builds and ships your product from the first sketch to production. Our approach is simple: understand the business first, then build the smallest thing that solves it well.</p>
+        <p>NiteshPro Software Solutions is a website, mobile app &amp; CRM development studio. We partner directly with founders and business owners — no account managers, no hand-offs — just a focused team that designs, builds and ships your product from the first sketch to production. Our approach is simple: understand the business first, then build the smallest thing that solves it well.</p>
 
         <div class="about-values">
           <div class="about-value">
@@ -2405,7 +2854,7 @@
             <span class="founder-avatar">N</span>
             <div>
               <strong>Nitesh Kumar Singh</strong>
-              <small>Founder, NiteshPro</small>
+              <small>Founder, NiteshPro Software Solutions</small>
             </div>
           </div>
         </div>
@@ -2422,7 +2871,7 @@
       </div>
 
       <div class="services-grid">
-        <article class="service-card reveal-up">
+        <article class="service-card reveal-up" data-service="website">
           <div class="service-icon icon-blue">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9S9.5 5.6 12 3z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
           </div>
@@ -2434,10 +2883,10 @@
             <li>Landing Pages</li>
             <li>Custom Web Applications</li>
           </ul>
-          <a href="#contact" class="link-more">Learn More <span class="arrow">→</span></a>
+          <button type="button" class="link-more btn-features" data-service="website">View Features <span class="arrow">→</span></button>
         </article>
 
-        <article class="service-card reveal-up" style="--delay:.1s">
+        <article class="service-card reveal-up" style="--delay:.1s" data-service="mobile">
           <div class="service-icon icon-purple">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M11 19h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
           </div>
@@ -2449,10 +2898,10 @@
             <li>Cross Platform Apps</li>
             <li>UI/UX Design</li>
           </ul>
-          <a href="#contact" class="link-more">Learn More <span class="arrow">→</span></a>
+          <button type="button" class="link-more btn-features" data-service="mobile">View Features <span class="arrow">→</span></button>
         </article>
 
-        <article class="service-card reveal-up" style="--delay:.2s">
+        <article class="service-card reveal-up" style="--delay:.2s" data-service="crm">
           <div class="service-icon icon-green">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="17.5" cy="9" r="2.2" stroke="currentColor" stroke-width="1.4"/><path d="M15.5 20c.2-2.5 1.8-4.2 4-4.6" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
           </div>
@@ -2464,7 +2913,7 @@
             <li>Customer Management</li>
             <li>Reports &amp; Analytics</li>
           </ul>
-          <a href="#contact" class="link-more">Learn More <span class="arrow">→</span></a>
+          <button type="button" class="link-more btn-features" data-service="crm">View Features <span class="arrow">→</span></button>
         </article>
       </div>
     </div>
@@ -2487,7 +2936,8 @@
       </div>
 
       <div class="portfolio-grid" id="portfolioGrid">
-        <article class="portfolio-card reveal-up" data-category="website">
+        <article class="portfolio-card reveal-up" data-category="website" tabindex="0" role="button" aria-label="View Urban Bites project details"
+          data-project='{"title":"Urban Bites — Restaurant Chain Website","tag":"Website","desc":"A fast, SEO-ready multi-location website with online ordering and table booking built in. Designed for high conversion and local search visibility.","client":"Urban Bites","result":"+62% Online Orders","duration":"6 Weeks","tech":["HTML5","CSS3","JavaScript","Node.js"],"features":["Multi-location pages","Online ordering","Table booking","SEO optimization","Google Maps integration","Admin dashboard"]}'>
           <div class="portfolio-thumb thumb-blue">
             <span class="portfolio-tag">Website</span>
             <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.4" opacity=".5"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9S9.5 5.6 12 3z" stroke="#fff" stroke-width="1.3" fill="none" opacity=".8"/></svg>
@@ -2502,10 +2952,12 @@
                 <small>Urban Bites</small>
               </div>
             </div>
+            <span class="view-project">View Project Details →</span>
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app">
+        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app" tabindex="0" role="button" aria-label="View Fitcore project details"
+          data-project='{"title":"Fitcore — Gym Membership App","tag":"Mobile App","desc":"Cross-platform app for class bookings, membership renewals and progress tracking with push notifications and payment integration.","client":"Fitcore Gym","result":"12K+ Active Users","duration":"8 Weeks","tech":["React Native","Firebase","Node.js"],"features":["Class booking","Membership renewals","Progress tracking","Push notifications","Payment gateway","Trainer dashboard"]}'>
           <div class="portfolio-thumb thumb-purple">
             <span class="portfolio-tag">Mobile App</span>
             <svg viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="#fff" stroke-width="1.4" opacity=".8"/><path d="M11 19h2" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg>
@@ -2520,10 +2972,12 @@
                 <small>Fitcore Gym</small>
               </div>
             </div>
+            <span class="view-project">View Project Details →</span>
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm">
+        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm" tabindex="0" role="button" aria-label="View GreenCart project details"
+          data-project='{"title":"GreenCart — Sales & Lead CRM","tag":"CRM System","desc":"Custom CRM to manage distributor leads, order pipelines and dispatch tracking with real-time analytics dashboard.","client":"GreenCart","result":"+38% Faster Follow-ups","duration":"10 Weeks","tech":["React","Python","PostgreSQL"],"features":["Lead management","Order pipeline","Dispatch tracking","Sales analytics","Role-based access","Automated reminders"]}'>
           <div class="portfolio-thumb thumb-green">
             <span class="portfolio-tag">CRM</span>
             <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#fff" stroke-width="1.4"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="#fff" stroke-width="1.4" fill="none"/><circle cx="17.5" cy="9" r="2.2" stroke="#fff" stroke-width="1.2"/><path d="M15.5 20c.2-2.5 1.8-4.2 4-4.6" stroke="#fff" stroke-width="1.2" fill="none"/></svg>
@@ -2538,10 +2992,12 @@
                 <small>GreenCart</small>
               </div>
             </div>
+            <span class="view-project">View Project Details →</span>
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" data-category="website">
+        <article class="portfolio-card reveal-up" data-category="website" tabindex="0" role="button" aria-label="View Skyline Realty project details"
+          data-project='{"title":"Skyline Realty — Property Listings Site","tag":"Website","desc":"Property search platform with map filters, EMI calculator and agent lead capture forms optimized for real estate SEO.","client":"Skyline Realty","result":"+80% Site Enquiries","duration":"7 Weeks","tech":["Next.js","Tailwind","MongoDB"],"features":["Map-based search","EMI calculator","Agent lead forms","Property comparison","Virtual tour links","SEO landing pages"]}'>
           <div class="portfolio-thumb thumb-green">
             <span class="portfolio-tag">Website</span>
             <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10l8-6 8 6v10h-5v-6H9v6H4z" stroke="#fff" stroke-width="1.4" fill="none"/></svg>
@@ -2556,10 +3012,12 @@
                 <small>Skyline Realty</small>
               </div>
             </div>
+            <span class="view-project">View Project Details →</span>
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app">
+        <article class="portfolio-card reveal-up" style="--delay:.05s" data-category="app" tabindex="0" role="button" aria-label="View Bright Learn project details"
+          data-project='{"title":"Bright Learn — Student Learning App","tag":"Mobile App","desc":"Course delivery app with quizzes, offline video downloads and progress reports for parents and teachers.","client":"Bright Learn","result":"4.7★ App Store Rating","duration":"12 Weeks","tech":["Flutter","Firebase","AWS"],"features":["Video courses","Offline downloads","Quiz engine","Parent reports","Progress tracking","Push notifications"]}'>
           <div class="portfolio-thumb thumb-blue">
             <span class="portfolio-tag">Mobile App</span>
             <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H8l-4 4V4z" stroke="#fff" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg>
@@ -2574,10 +3032,12 @@
                 <small>Bright Learn</small>
               </div>
             </div>
+            <span class="view-project">View Project Details →</span>
           </div>
         </article>
 
-        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm">
+        <article class="portfolio-card reveal-up" style="--delay:.1s" data-category="crm" tabindex="0" role="button" aria-label="View Pulse Clinic project details"
+          data-project='{"title":"Pulse Clinic — Patient Management CRM","tag":"CRM System","desc":"Appointment scheduling, patient history and billing in one internal dashboard for healthcare clinics.","client":"Pulse Clinic","result":"-40% Admin Time","duration":"9 Weeks","tech":["Vue.js","Laravel","MySQL"],"features":["Appointment booking","Patient records","Billing & invoices","Prescription management","SMS reminders","Staff dashboard"]}'>
           <div class="portfolio-thumb thumb-purple">
             <span class="portfolio-tag">CRM</span>
             <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="#fff" stroke-width="1.4"/><path d="M4 9h16M9 13h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/></svg>
@@ -2592,6 +3052,7 @@
                 <small>Pulse Clinic</small>
               </div>
             </div>
+            <span class="view-project">View Project Details →</span>
           </div>
         </article>
       </div>
@@ -2614,11 +3075,30 @@
       </div>
 
       <div class="pricing-grid">
-        <article class="price-card reveal-up">
+        <article class="price-card free-tier reveal-up">
+          <span class="free-badge">100% Free</span>
+          <h3>Free Consultation</h3>
+          <p class="plan-desc">Start with a free strategy call &amp; project roadmap — no commitment.</p>
+          <div class="plan-price">
+            <span class="amount">₹0</span>
+            <span class="period">/ forever</span>
+          </div>
+          <ul class="plan-features">
+            <li>30-min free discovery call</li>
+            <li>Website &amp; SEO audit</li>
+            <li>Custom project quote</li>
+            <li>Technology recommendation</li>
+            <li class="disabled">Development work</li>
+            <li class="disabled">Dedicated support</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)">Get Free Quote</a>
+        </article>
+
+        <article class="price-card reveal-up" style="--delay:.05s">
           <h3>Starter</h3>
           <p class="plan-desc">For small businesses that need a solid online presence.</p>
           <div class="plan-price">
-            <span class="amount price-value" data-monthly="999" data-yearly="11999">₹999</span>
+            <span class="amount price-value" data-monthly="499" data-yearly="5999">₹499</span>
             <span class="period">/ project</span>
           </div>
           <ul class="plan-features">
@@ -2637,7 +3117,7 @@
           <h3>Professional</h3>
           <p class="plan-desc">For growing businesses that need a website + app or CRM.</p>
           <div class="plan-price">
-            <span class="amount price-value" data-monthly="1999" data-yearly="39999">₹1999</span>
+            <span class="amount price-value" data-monthly="1499" data-yearly="29999">₹1499</span>
             <span class="period">/ project</span>
           </div>
           <ul class="plan-features">
@@ -2651,11 +3131,11 @@
           <a href="#contact" class="btn btn-primary">Get Started</a>
         </article>
 
-        <article class="price-card reveal-up" style="--delay:.2s">
+        <article class="price-card reveal-up" style="--delay:.15s">
           <h3>Enterprise</h3>
           <p class="plan-desc">For businesses that need a full website + app + CRM ecosystem.</p>
           <div class="plan-price">
-            <span class="amount price-value" data-monthly="2999" data-yearly="79999">₹2999</span>
+            <span class="amount price-value" data-monthly="2499" data-yearly="59999">₹2499</span>
             <span class="period">/ project</span>
           </div>
           <ul class="plan-features">
@@ -2697,54 +3177,135 @@
     </div>
   </section>
 
-  <!-- ===== Contact / CTA ===== -->
+  <!-- ===== Contact / Enquiry ===== -->
   <section class="contact-cta" id="contact">
-    <div class="container contact-grid">
-      <div class="contact-card reveal-up">
-        <h3>Get In Touch</h3>
-        <p>Have a project in mind? Let's build something great together!</p>
-        <ul class="contact-list">
-          <li><span class="c-icon">📞</span> 8810751872</li>
-          <li><span class="c-icon">✉️</span> niteshkumarsingh1500@gamil.com</li>
-          <li><span class="c-icon">📍</span> India</li>
-        </ul>
-        <form id="contactForm" class="contact-form" novalidate>
-          <div class="form-row">
-            <div class="field">
-              <input type="text" id="cf-name" placeholder=" " required>
-              <label for="cf-name">Your Name</label>
-              <span class="error-msg">Please enter your name</span>
-            </div>
-            <div class="field">
-              <input type="email" id="cf-email" placeholder=" " required>
-              <label for="cf-email">Your Email</label>
-              <span class="error-msg">Enter a valid email</span>
-            </div>
-          </div>
-          <div class="field">
-            <textarea id="cf-msg" rows="3" placeholder=" " required></textarea>
-            <label for="cf-msg">Tell us about your project</label>
-            <span class="error-msg">Please add a short message</span>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Send Message <span class="arrow">→</span></button>
-          <p class="form-success" id="formSuccess">✓ Thanks! Your message has been noted. We'll get back to you soon.</p>
-        </form>
+    <div class="container">
+      <div class="enquiry-section-head reveal-up">
+        <span class="eyebrow">Project Enquiry</span>
+        <h2>Build Your <span class="text-gradient">Dream Website</span> With Us</h2>
+        <p>Interactive project builder — select features, fill details &amp; send enquiry. NiteshPro Software Solutions will respond within 24 hours.</p>
       </div>
 
-      <div class="grow-card reveal-up" style="--delay:.1s">
-        <div class="grow-glow" aria-hidden="true"></div>
-        <h3>Let's Grow Your Business Together</h3>
-        <p>We are here to help you turn your ideas into powerful digital solutions.</p>
-        <a href="#contact" class="btn btn-primary">Get Free Quote <span class="arrow">→</span></a>
-        <div class="grow-illustration">
-          <svg viewBox="0 0 260 160" width="100%" height="100%">
-            <rect x="20" y="20" width="130" height="90" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.25)"/>
-            <polyline points="35,90 65,65 90,80 120,45 140,55" fill="none" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="140" cy="55" r="4" fill="#60A5FA" class="pulse-dot"/>
-            <circle cx="205" cy="70" r="26" fill="rgba(96,165,250,.18)"/>
-            <circle cx="205" cy="45" r="12" fill="#93C5FD"/>
-            <rect x="190" y="58" width="30" height="45" rx="10" fill="#3B82F6"/>
-          </svg>
+      <div class="contact-grid">
+        <div class="enquiry-builder reveal-up">
+          <div class="build-steps" id="buildSteps">
+            <span class="build-step active" data-step="1">1. Type</span>
+            <span class="build-step" data-step="2">2. Features</span>
+            <span class="build-step" data-step="3">3. Preview</span>
+          </div>
+          <h4>What are you building?</h4>
+          <div class="build-chips" id="projectTypeChips">
+            <button type="button" class="build-chip" data-type="Website">🌐 Website</button>
+            <button type="button" class="build-chip" data-type="Mobile App">📱 Mobile App</button>
+            <button type="button" class="build-chip" data-type="CRM System">📊 CRM System</button>
+            <button type="button" class="build-chip" data-type="E-Commerce">🛒 E-Commerce</button>
+            <button type="button" class="build-chip" data-type="Full Stack">🚀 Website + App + CRM</button>
+          </div>
+          <h4>Select features you need</h4>
+          <div class="build-chips" id="featureChips">
+            <button type="button" class="build-chip" data-feature="SEO Friendly">SEO Friendly</button>
+            <button type="button" class="build-chip" data-feature="Responsive Design">Responsive Design</button>
+            <button type="button" class="build-chip" data-feature="Payment Gateway">Payment Gateway</button>
+            <button type="button" class="build-chip" data-feature="Admin Panel">Admin Panel</button>
+            <button type="button" class="build-chip" data-feature="Live Chat">Live Chat</button>
+            <button type="button" class="build-chip" data-feature="Analytics Dashboard">Analytics</button>
+            <button type="button" class="build-chip" data-feature="Multi Language">Multi Language</button>
+            <button type="button" class="build-chip" data-feature="API Integration">API Integration</button>
+          </div>
+          <div class="build-preview" id="buildPreview">
+            <small>Your Project Preview</small>
+            <p class="preview-empty" id="previewText">Select project type &amp; features to see live preview…</p>
+          </div>
+        </div>
+
+        <div class="contact-card reveal-up" style="--delay:.1s">
+          <h3>Send Enquiry</h3>
+          <p>Fill all details — everything will be sent to our team instantly.</p>
+          <ul class="contact-list">
+            <li><span class="c-icon">📞</span> <a href="tel:8810751872">8810751872</a></li>
+            <li><span class="c-icon">✉️</span> <a href="mailto:niteshkumarsingh1500@gmail.com">niteshkumarsingh1500@gmail.com</a></li>
+            <li><span class="c-icon">📍</span> India — NiteshPro Software Solutions</li>
+          </ul>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
+                <label for="cf-name">Full Name *</label>
+                <span class="error-msg">Please enter your name</span>
+              </div>
+              <div class="field">
+                <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
+                <label for="cf-email">Email Address *</label>
+                <span class="error-msg">Enter a valid email</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <input type="tel" id="cf-phone" name="phone" placeholder=" " required autocomplete="tel">
+                <label for="cf-phone">Phone Number *</label>
+                <span class="error-msg">Enter a valid phone number</span>
+              </div>
+              <div class="field">
+                <input type="text" id="cf-company" name="company" placeholder=" " autocomplete="organization">
+                <label for="cf-company">Company / Business</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <select id="cf-service" name="service" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="Website Development">Website Development</option>
+                  <option value="Mobile App Development">Mobile App Development</option>
+                  <option value="CRM Development">CRM Development</option>
+                  <option value="E-Commerce Store">E-Commerce Store</option>
+                  <option value="Full Digital Solution">Full Digital Solution</option>
+                </select>
+                <label for="cf-service">Service Required *</label>
+                <span class="error-msg">Select a service</span>
+              </div>
+              <div class="field">
+                <select id="cf-plan" name="plan" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="Free Consultation">Free Consultation (₹0)</option>
+                  <option value="Starter Plan">Starter (₹499)</option>
+                  <option value="Professional Plan">Professional (₹1499)</option>
+                  <option value="Enterprise Plan">Enterprise (₹2499)</option>
+                  <option value="Custom Quote">Custom Quote</option>
+                </select>
+                <label for="cf-plan">Plan Interest *</label>
+                <span class="error-msg">Select a plan</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <select id="cf-budget" name="budget">
+                  <option value="" disabled selected hidden></option>
+                  <option value="Under ₹5,000">Under ₹5,000</option>
+                  <option value="₹5,000 - ₹15,000">₹5,000 - ₹15,000</option>
+                  <option value="₹15,000 - ₹50,000">₹15,000 - ₹50,000</option>
+                  <option value="₹50,000+">₹50,000+</option>
+                </select>
+                <label for="cf-budget">Budget Range</label>
+              </div>
+              <div class="field">
+                <select id="cf-timeline" name="timeline">
+                  <option value="" disabled selected hidden></option>
+                  <option value="ASAP (1-2 weeks)">ASAP (1-2 weeks)</option>
+                  <option value="1 Month">Within 1 Month</option>
+                  <option value="2-3 Months">2-3 Months</option>
+                  <option value="Flexible">Flexible</option>
+                </select>
+                <label for="cf-timeline">Timeline</label>
+              </div>
+            </div>
+            <div class="field">
+              <textarea id="cf-msg" name="message" rows="3" placeholder=" " required></textarea>
+              <label for="cf-msg">Project Details &amp; Requirements *</label>
+              <span class="error-msg">Please describe your project</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Enquiry <span class="arrow">→</span></button>
+            <p class="form-success" id="formSuccess">✓ Enquiry sent! NiteshPro Software Solutions will contact you within 24 hours.</p>
+          </form>
         </div>
       </div>
     </div>
@@ -2756,9 +3317,12 @@
       <div class="footer-brand">
         <a href="#home" class="brand">
           <span class="brand-mark">N</span>
-          <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+          <span class="brand-name-wrap">
+            <span class="brand-name">Nitesh<span class="accent">Pro</span></span>
+            <span class="brand-tag">Software Solutions</span>
+          </span>
         </a>
-        <p>We build websites, mobile apps &amp; CRM solutions that help businesses grow and succeed.</p>
+        <p>NiteshPro Software Solutions builds websites, mobile apps &amp; CRM systems that help businesses grow and succeed.</p>
         <div class="social-row">
           <a href="#" aria-label="Facebook">f</a>
           <a href="#" aria-label="Instagram">◎</a>
@@ -2785,16 +3349,66 @@
       <div class="footer-col">
         <h4>Contact Info</h4>
         <a href="tel:8810751872">📞 8810751872</a>
-        <a href="mailto:niteshkumarsingh1500@gamil.com">✉️ niteshkumarsingh1500@gamil.com</a>
+        <a href="mailto:niteshkumarsingh1500@gmail.com">✉️ niteshkumarsingh1500@gmail.com</a>
         <span>📍 India</span>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">© 2026 NiteshPro. All Rights Reserved.</div>
+      <div class="container">© 2026 NiteshPro Software Solutions. All Rights Reserved.</div>
     </div>
   </footer>
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ===== Project Details Modal ===== -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag" id="projectModalTag">Website</span>
+          <h3 id="projectModalTitle">Project Title</h3>
+        </div>
+        <button class="modal-close" id="projectModalClose" aria-label="Close project details">×</button>
+      </div>
+      <div class="modal-body">
+        <p id="projectModalDesc"></p>
+        <div class="modal-stats">
+          <div class="modal-stat"><strong id="projectModalResult">—</strong><span>Key Result</span></div>
+          <div class="modal-stat"><strong id="projectModalDuration">—</strong><span>Duration</span></div>
+          <div class="modal-stat"><strong id="projectModalClient">—</strong><span>Client</span></div>
+        </div>
+        <h4 style="font-size:.95rem;margin-bottom:8px">Features Delivered</h4>
+        <div class="modal-features" id="projectModalFeatures"></div>
+        <h4 style="font-size:.95rem;margin:16px 0 8px">Tech Stack</h4>
+        <div class="modal-tech" id="projectModalTech"></div>
+        <div class="modal-actions">
+          <a href="#contact" class="btn btn-primary" id="projectModalCta">Start Similar Project <span class="arrow">→</span></a>
+          <button type="button" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)" id="projectModalCloseBtn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Service Features Modal ===== -->
+  <div class="modal-overlay" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag" id="serviceModalTag">Service</span>
+          <h3 id="serviceModalTitle">Service Features</h3>
+        </div>
+        <button class="modal-close" id="serviceModalClose" aria-label="Close features">×</button>
+      </div>
+      <div class="modal-body">
+        <p id="serviceModalDesc"></p>
+        <ul class="feature-list-modal" id="serviceModalFeatures"></ul>
+        <div class="modal-actions">
+          <a href="#contact" class="btn btn-primary">Get Free Quote <span class="arrow">→</span></a>
+          <button type="button" class="btn btn-outline" style="color:var(--navy-900);border-color:var(--line-dark)" id="serviceModalCloseBtn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
   </script>
@@ -3090,6 +3704,177 @@
         { value: 25, color: '#7C6BF2' },
       ]);
 
+      /* ---------- Initialize EmailJS (must run before send) ---------- */
+      emailjs.init("97AQm7GnlOsMTkgxj");
+
+      const EMAILJS_SERVICE = 'service_5rauum1';
+      const EMAILJS_TEMPLATE = 'template_24jltgv';
+      const RECIPIENT_EMAIL = 'niteshkumarsingh1500@gmail.com';
+
+      /* ---------- Enquiry Builder (interactive chips) ---------- */
+      const selectedTypes = new Set();
+      const selectedFeatures = new Set();
+      const previewText = document.getElementById('previewText');
+      const buildSteps = document.querySelectorAll('.build-step');
+
+      function updateBuildPreview() {
+        const types = [...selectedTypes];
+        const features = [...selectedFeatures];
+        if (!types.length && !features.length) {
+          previewText.className = 'preview-empty';
+          previewText.textContent = 'Select project type & features to see live preview…';
+          buildSteps.forEach(s => s.classList.remove('done', 'active'));
+          buildSteps[0]?.classList.add('active');
+          return;
+        }
+        previewText.className = '';
+        let html = '';
+        if (types.length) html += '<strong>Project:</strong> ' + types.join(', ') + '<br>';
+        if (features.length) html += '<strong>Features:</strong> ' + features.join(' · ');
+        previewText.innerHTML = html;
+        buildSteps[0]?.classList.add('done');
+        buildSteps[1]?.classList.toggle('active', features.length === 0);
+        buildSteps[1]?.classList.toggle('done', features.length > 0);
+        buildSteps[2]?.classList.toggle('active', features.length > 0);
+        buildSteps[2]?.classList.toggle('done', types.length > 0 && features.length > 0);
+      }
+
+      document.querySelectorAll('#projectTypeChips .build-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const type = chip.dataset.type;
+          if (selectedTypes.has(type)) {
+            selectedTypes.delete(type);
+            chip.classList.remove('selected');
+          } else {
+            selectedTypes.add(type);
+            chip.classList.add('selected');
+          }
+          updateBuildPreview();
+          syncServiceFromBuilder();
+        });
+      });
+
+      document.querySelectorAll('#featureChips .build-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const feat = chip.dataset.feature;
+          if (selectedFeatures.has(feat)) {
+            selectedFeatures.delete(feat);
+            chip.classList.remove('selected');
+          } else {
+            selectedFeatures.add(feat);
+            chip.classList.add('selected');
+          }
+          updateBuildPreview();
+        });
+      });
+
+      function syncServiceFromBuilder() {
+        const serviceSelect = document.getElementById('cf-service');
+        if (!serviceSelect || !selectedTypes.size) return;
+        const type = [...selectedTypes][0];
+        const map = {
+          'Website': 'Website Development',
+          'Mobile App': 'Mobile App Development',
+          'CRM System': 'CRM Development',
+          'E-Commerce': 'E-Commerce Store',
+          'Full Stack': 'Full Digital Solution'
+        };
+        if (map[type]) serviceSelect.value = map[type];
+      }
+
+      /* ---------- Modals ---------- */
+      const projectModal = document.getElementById('projectModal');
+      const serviceModal = document.getElementById('serviceModal');
+
+      const serviceData = {
+        website: {
+          tag: 'Website Development',
+          title: 'Website Development Features',
+          desc: 'NiteshPro Software Solutions builds fast, SEO-friendly and mobile-responsive websites tailored to your brand.',
+          features: ['Responsive & mobile-first design', 'SEO-friendly structure & meta tags', 'Fast loading & Core Web Vitals', 'Contact & enquiry forms', 'Admin panel / CMS', 'Google Analytics integration', 'SSL & security setup', 'E-Commerce ready (optional)']
+        },
+        mobile: {
+          tag: 'Mobile App Development',
+          title: 'Mobile App Development Features',
+          desc: 'Android & iOS apps with smooth UX, built by NiteshPro Software Solutions for performance and scale.',
+          features: ['Android & iOS native/cross-platform', 'Push notifications', 'Payment gateway integration', 'Offline mode support', 'App Store & Play Store deployment', 'User authentication & profiles', 'Real-time sync & APIs', 'Analytics dashboard']
+        },
+        crm: {
+          tag: 'CRM Development',
+          title: 'CRM Development Features',
+          desc: 'Custom CRM systems to manage leads, sales, customers and support — all in one dashboard.',
+          features: ['Lead & pipeline management', 'Customer database', 'Sales tracking & reports', 'Automated follow-up reminders', 'Role-based team access', 'Invoice & billing module', 'Email/SMS integration', 'Custom dashboards & analytics']
+        }
+      };
+
+      function openModal(overlay) {
+        overlay.classList.add('open');
+        document.body.classList.add('modal-open');
+      }
+
+      function closeModal(overlay) {
+        overlay.classList.remove('open');
+        document.body.classList.remove('modal-open');
+      }
+
+      function openProjectModal(data) {
+        document.getElementById('projectModalTag').textContent = data.tag;
+        document.getElementById('projectModalTitle').textContent = data.title;
+        document.getElementById('projectModalDesc').textContent = data.desc;
+        document.getElementById('projectModalResult').textContent = data.result;
+        document.getElementById('projectModalDuration').textContent = data.duration;
+        document.getElementById('projectModalClient').textContent = data.client;
+        document.getElementById('projectModalFeatures').innerHTML = data.features.map(f => '<span class="modal-feature-pill">' + f + '</span>').join('');
+        document.getElementById('projectModalTech').innerHTML = data.tech.map(t => '<span>' + t + '</span>').join('');
+        openModal(projectModal);
+      }
+
+      document.querySelectorAll('.portfolio-card[data-project]').forEach(card => {
+        card.addEventListener('click', () => {
+          try {
+            openProjectModal(JSON.parse(card.dataset.project));
+          } catch (err) { console.error(err); }
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+          }
+        });
+      });
+
+      ['projectModalClose', 'projectModalCloseBtn'].forEach(id => {
+        document.getElementById(id)?.addEventListener('click', () => closeModal(projectModal));
+      });
+      projectModal?.addEventListener('click', (e) => { if (e.target === projectModal) closeModal(projectModal); });
+      document.getElementById('projectModalCta')?.addEventListener('click', () => closeModal(projectModal));
+
+      document.querySelectorAll('.btn-features').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.service;
+          const data = serviceData[key];
+          if (!data) return;
+          document.getElementById('serviceModalTag').textContent = data.tag;
+          document.getElementById('serviceModalTitle').textContent = data.title;
+          document.getElementById('serviceModalDesc').textContent = data.desc;
+          document.getElementById('serviceModalFeatures').innerHTML = data.features.map(f => '<li>' + f + '</li>').join('');
+          openModal(serviceModal);
+        });
+      });
+
+      ['serviceModalClose', 'serviceModalCloseBtn'].forEach(id => {
+        document.getElementById(id)?.addEventListener('click', () => closeModal(serviceModal));
+      });
+      serviceModal?.addEventListener('click', (e) => { if (e.target === serviceModal) closeModal(serviceModal); });
+      document.querySelector('#serviceModal .btn-primary')?.addEventListener('click', () => closeModal(serviceModal));
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal(projectModal);
+          closeModal(serviceModal);
+        }
+      });
+
       /* ---------- Contact form validation & EmailJS Integration ---------- */
       const form = document.getElementById('contactForm');
       const successMsg = document.getElementById('formSuccess');
@@ -3099,6 +3884,35 @@
         return condition;
       }
 
+      function buildEmailTitle(formData) {
+        const lines = [
+          '=== NEW ENQUIRY | NiteshPro Software Solutions ===',
+          '',
+          '--- CONTACT INFO ---',
+          'Name: ' + formData.name,
+          'Email: ' + formData.email,
+          'Phone: ' + formData.phone,
+          'Company: ' + (formData.company || 'Not provided'),
+          '',
+          '--- PROJECT DETAILS ---',
+          'Service: ' + formData.service,
+          'Plan: ' + formData.plan,
+          'Budget: ' + (formData.budget || 'Not specified'),
+          'Timeline: ' + (formData.timeline || 'Not specified'),
+          'Project Type (Builder): ' + ([...selectedTypes].join(', ') || 'Not selected'),
+          'Selected Features: ' + ([...selectedFeatures].join(', ') || 'None selected'),
+          '',
+          '--- MESSAGE ---',
+          formData.message,
+          '',
+          '--- META ---',
+          'Sent from: NiteshPro Software Solutions Website',
+          'Date: ' + new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          'Reply To: ' + formData.email
+        ];
+        return lines.join('\n');
+      }
+
       if (form) {
         form.addEventListener('submit', (e) => {
           e.preventDefault();
@@ -3106,38 +3920,64 @@
 
           const nameInput = document.getElementById('cf-name');
           const emailInput = document.getElementById('cf-email');
+          const phoneInput = document.getElementById('cf-phone');
+          const companyInput = document.getElementById('cf-company');
+          const serviceInput = document.getElementById('cf-service');
+          const planInput = document.getElementById('cf-plan');
+          const budgetInput = document.getElementById('cf-budget');
+          const timelineInput = document.getElementById('cf-timeline');
           const msgInput = document.getElementById('cf-msg');
           const submitBtn = form.querySelector('button[type="submit"]');
 
           const nameValid = validateField(nameInput.closest('.field'), nameInput.value.trim().length > 1);
-          const emailValid = validateField(emailInput.closest('.field'), /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput
-            .value.trim()));
+          const emailValid = validateField(emailInput.closest('.field'), /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim()));
+          const phoneValid = validateField(phoneInput.closest('.field'), /^[\d\s+\-()]{8,15}$/.test(phoneInput.value.trim()));
+          const serviceValid = validateField(serviceInput.closest('.field'), serviceInput.value !== '');
+          const planValid = validateField(planInput.closest('.field'), planInput.value !== '');
           const msgValid = validateField(msgInput.closest('.field'), msgInput.value.trim().length > 4);
 
-          if (nameValid && emailValid && msgValid) {
+          if (nameValid && emailValid && phoneValid && serviceValid && planValid && msgValid) {
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.innerHTML = 'Sending... <span class="arrow">⏳</span>';
             submitBtn.disabled = true;
 
-            const params = {
-              email: emailInput.value.trim(),
+            const formData = {
               name: nameInput.value.trim(),
-              title: "Portfolio Contact Message",
+              email: emailInput.value.trim(),
+              phone: phoneInput.value.trim(),
+              company: companyInput.value.trim(),
+              service: serviceInput.value,
+              plan: planInput.value,
+              budget: budgetInput.value,
+              timeline: timelineInput.value,
               message: msgInput.value.trim()
             };
 
-            // EmailJS keys - replace with your own if needed
-            const serviceID = 'service_5rauum1';
-            const templateID = 'template_24jltgv';
+            const emailTitle = buildEmailTitle(formData);
 
-            emailjs.send(serviceID, templateID, params)
-              .then(function(response) {
+            const params = {
+              title: emailTitle,
+              to_email: RECIPIENT_EMAIL,
+              reply_to: formData.email,
+              from_name: formData.name,
+              from_email: formData.email,
+              name: formData.name,
+              email: formData.email,
+              message: formData.message
+            };
+
+            emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, params)
+              .then(function() {
                 successMsg.classList.add('show');
                 form.reset();
                 form.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
-                setTimeout(() => successMsg.classList.remove('show'), 5000);
+                selectedTypes.clear();
+                selectedFeatures.clear();
+                document.querySelectorAll('.build-chip.selected').forEach(c => c.classList.remove('selected'));
+                updateBuildPreview();
+                setTimeout(() => successMsg.classList.remove('show'), 6000);
               }, function(error) {
-                alert('Failed to send message. Please try again. Error: ' + JSON.stringify(error));
+                alert('Failed to send enquiry. Please call 8810751872 or email directly.\nError: ' + (error.text || error.message || 'Unknown'));
               })
               .finally(function() {
                 submitBtn.innerHTML = originalBtnText;
@@ -3146,9 +3986,12 @@
           }
         });
 
-        form.querySelectorAll('input, textarea').forEach(inputEl => {
+        form.querySelectorAll('input, textarea, select').forEach(inputEl => {
           inputEl.addEventListener('input', () => {
-            inputEl.closest('.field').classList.remove('invalid');
+            inputEl.closest('.field')?.classList.remove('invalid');
+          });
+          inputEl.addEventListener('change', () => {
+            inputEl.closest('.field')?.classList.remove('invalid');
           });
         });
       }
@@ -3168,11 +4011,6 @@
           }
         });
       });
-
-      // Initialize EmailJS
-      (function() {
-        emailjs.init("97AQm7GnlOsMTkgxj");
-      })();
 
     });
 
